@@ -207,6 +207,12 @@ export function postLyricsOffset(offset: number) {
   }
 }
 
+export function postLyricsUpdated(bvid: string, cid: string, lyrics: string) {
+  const channel = createBroadcastChannel();
+  channel.postMessage({ from: "main", type: "lyricsUpdated", bvid, cid, lyrics });
+  channel.close();
+}
+
 /**
  * 切换mini/完整播放模式
  */

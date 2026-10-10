@@ -65,21 +65,31 @@ export default function DesktopLyrics() {
   const [offset, setOffset] = useState(DEFAULT_OFFSET);
 
   const bcRef = useRef<BroadcastChannel | null>(null);
+  const lyricsLoadIdRef = useRef(0);
 
   // Listen to broadcast state
   useEffect(() => {
+    let currentKey = "";
     bcRef.current = createBroadcastChannel();
     // ask for init state
     bcRef.current.postMessage({ from: "mini", data: { type: "init" }, ts: Date.now() });
 
     bcRef.current.onmessage = ev => {
-      const { from, state, type, offset: nextOffset } = ev.data || {};
+      const { from, state, type, offset: nextOffset, bvid, cid, lyrics: updatedLyrics } = ev.data || {};
       if (from !== "main") return;
+      if (type === "lyricsUpdated") {
+        if (`${bvid}-${cid}` === currentKey && typeof updatedLyrics === "string") {
+          lyricsLoadIdRef.current += 1;
+          setLyrics(parseLrcToLines(updatedLyrics));
+        }
+        return;
+      }
       if (type === "lyricsOffset" && typeof nextOffset === "number") {
         setOffset(nextOffset);
         return;
       }
       if (!state) return;
+      currentKey = `${state.bvid}-${state.cid}`;
 
       if (typeof state.currentTime === "number") {
         setCurrentTime(state.currentTime);
@@ -105,6 +115,7 @@ export default function DesktopLyrics() {
   // Fetch Lyrics
   useEffect(() => {
     let canceled = false;
+    const loadId = ++lyricsLoadIdRef.current;
     setOffset(DEFAULT_OFFSET);
     setLyrics([]);
 
@@ -118,7 +129,7 @@ export default function DesktopLyrics() {
 
       try {
         const store = await window.electron.getStore(StoreNameMap.LyricsCache);
-        if (canceled) return;
+        if (canceled || loadId !== lyricsLoadIdRef.current) return;
         if (store && typeof store === "object") {
           const cached = store[`${playState.bvid}-${playState.cid}`];
           if (cached) {
@@ -136,10 +147,10 @@ export default function DesktopLyrics() {
         if (playState.aid) params.aid = Number(playState.aid);
 
         const result = await getLyricsAuto(params, playState.title || "", playState.bvid, playState.cid);
-        if (canceled) return;
+        if (canceled || loadId !== lyricsLoadIdRef.current) return;
         setLyrics(result?.lyrics || []);
       } catch {
-        if (canceled) return;
+        if (canceled || loadId !== lyricsLoadIdRef.current) return;
         setLyrics([]);
       }
     };

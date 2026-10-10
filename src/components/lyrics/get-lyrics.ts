@@ -77,6 +77,7 @@ async function cacheLyrics(bvid: string, cid: string, lyrics: string, tLyrics?: 
     const store = await window.electron.getStore(StoreNameMap.LyricsCache);
     const key = `${bvid}-${cid}`;
     const prev = store?.[key] || {};
+    if (prev.lyrics || prev.tLyrics) return;
     await window.electron.setStore(StoreNameMap.LyricsCache, {
       ...(store || {}),
       [key]: { ...prev, lyrics, tLyrics },

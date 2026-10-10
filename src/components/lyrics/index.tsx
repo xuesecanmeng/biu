@@ -1,13 +1,13 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 
 import { addToast, useDisclosure } from "@heroui/react";
-import { RiCharacterRecognitionLine, RiTBoxLine, RiTranslate } from "@remixicon/react";
+import { RiCharacterRecognitionLine, RiEditLine, RiTBoxLine, RiTranslate } from "@remixicon/react";
 import clsx from "classnames";
 import { debounce } from "es-toolkit";
 
 import type { WebPlayerParams } from "@/service/web-player";
 
-import { postLyricsOffset } from "@/common/utils/mini-player";
+import { postLyricsOffset, postLyricsUpdated } from "@/common/utils/mini-player";
 import { usePlayList } from "@/store/play-list";
 import { usePlayProgress } from "@/store/play-progress";
 import { useSettings } from "@/store/settings";
@@ -15,6 +15,7 @@ import { StoreNameMap } from "@shared/store";
 
 import IconButton from "../icon-button";
 import LyricsSearchModal from "../lyrics-search-modal";
+import LyricsEditModal from "./edit-modal";
 import FontSizeControl from "./font-size-control";
 import { getLyricsAuto } from "./get-lyrics";
 import OffsetControl from "./offset-control";
@@ -33,6 +34,16 @@ const timeTagPattern = /\[(\d{1,2}):(\d{1,2})(?:\.(\d{1,3}))?\]/g;
 
 const DEFAULT_FONT_SIZE = 20;
 const DEFAULT_OFFSET = 0;
+
+const formatLrc = (lines: LyricLine[]) =>
+  lines
+    .map(({ time, text }) => {
+      const minutes = String(Math.floor(time / 60000)).padStart(2, "0");
+      const seconds = String(Math.floor(time / 1000) % 60).padStart(2, "0");
+      const milliseconds = String(time % 1000).padStart(3, "0");
+      return `[${minutes}:${seconds}.${milliseconds}]${text}`;
+    })
+    .join("\n");
 
 /** 检测字符是否为假名（平假名 / 片假名 / 半角片假名） */
 const isKana = (char: string): boolean => {
@@ -91,6 +102,7 @@ const Lyrics = ({
   const showFurigana = useSettings(s => s.showLyricsFurigana);
   const updateSettings = useSettings(s => s.update);
   const [isLoading, setIsLoading] = useState(false);
+  const [editingItem, setEditingItem] = useState<PlayItem>();
   const { currentTime } = usePlayProgress();
   const currentMs = currentTime * 1000 + offset;
 
@@ -149,6 +161,7 @@ const Lyrics = ({
 
   useEffect(() => {
     let canceled = false;
+    setEditingItem(undefined);
     setOffset(DEFAULT_OFFSET);
     setFontSize(DEFAULT_FONT_SIZE);
     // 切歌时清空注音缓存
@@ -375,6 +388,29 @@ const Lyrics = ({
     [onCloseSearch, parseLrc],
   );
 
+  const handleLyricsSaved = async (nextLyrics: string, nextTLyrics: string) => {
+    if (!editingItem?.bvid || !editingItem.cid || usePlayList.getState().playId !== editingItem.id) return;
+
+    const key = `${editingItem.bvid}-${editingItem.cid}`;
+    persistLyricsCache.cancel();
+    const store = await window.electron.getStore(StoreNameMap.LyricsCache);
+    if (usePlayList.getState().playId !== editingItem.id) return;
+
+    await window.electron.setStore(StoreNameMap.LyricsCache, {
+      ...store,
+      [key]: { ...store?.[key], offset, fontSize, lyrics: nextLyrics, tLyrics: nextTLyrics },
+    });
+    // store.set 的主进程处理器会吞掉写入异常，读回后再确认保存成功。
+    const saved = (await window.electron.getStore(StoreNameMap.LyricsCache))?.[key];
+    if (saved?.lyrics !== nextLyrics || saved?.tLyrics !== nextTLyrics) throw new Error("歌词保存失败");
+    postLyricsUpdated(editingItem.bvid, editingItem.cid, nextLyrics);
+    if (usePlayList.getState().playId !== editingItem.id) return;
+
+    setLyrics(parseLrc(nextLyrics));
+    setTranslatedLyrics(parseLrc(nextTLyrics));
+    setEditingItem(undefined);
+  };
+
   useEffect(() => {
     return () => {
       const cancelable = persistLyricsCache as { cancel?: () => void };
@@ -532,6 +568,24 @@ const Lyrics = ({
               <OffsetControl value={offset} onChange={handleOffsetChange} onOpenChange={() => {}} />
               <IconButton
                 type="button"
+                aria-label="编辑歌词"
+                tooltip="编辑歌词"
+                tooltipProps={{ placement: "left" }}
+                isDisabled={isLoading || !playId}
+                onPress={() => {
+                  const item = usePlayList.getState().getPlayItem();
+                  if (!item?.bvid || !item.cid) {
+                    addToast({ title: "当前播放信息缺失，无法保存歌词", color: "warning" });
+                    return;
+                  }
+                  setEditingItem(item);
+                }}
+                className="bg-foreground/20 text-foreground hover:bg-foreground/30 min-w-0 rounded-full text-xs font-semibold"
+              >
+                <RiEditLine size={16} />
+              </IconButton>
+              <IconButton
+                type="button"
                 onPress={onOpenSearch}
                 tooltip="歌词搜索"
                 tooltipProps={{ placement: "left" }}
@@ -544,6 +598,14 @@ const Lyrics = ({
         )}
       </div>
       <LyricsSearchModal isOpen={isSearchOpen} onOpenChange={setIsSearchOpen} onLyricsAdopted={handleLyricsAdopted} />
+      {editingItem && editingItem.id === playId && (
+        <LyricsEditModal
+          lyrics={formatLrc(lyrics)}
+          translatedLyrics={formatLrc(translatedLyrics)}
+          onClose={() => setEditingItem(undefined)}
+          onSave={handleLyricsSaved}
+        />
+      )}
     </>
   );
 };

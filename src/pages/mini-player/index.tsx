@@ -201,6 +201,7 @@ const MiniPlayer = () => {
   // 歌词加载去重：同一 bvid+cid 只拉一次
   const loadedLyricsKeyRef = useRef<string>("");
   const lyricsLoadingRef = useRef<boolean>(false);
+  const lyricsLoadIdRef = useRef(0);
 
   const postMessage = (type: string, state?: any) => {
     if (!bcRef.current) return;
@@ -227,9 +228,11 @@ const MiniPlayer = () => {
     if (lyricsLoadingRef.current) return;
     loadedLyricsKeyRef.current = key;
     lyricsLoadingRef.current = true;
+    const loadId = ++lyricsLoadIdRef.current;
 
     try {
       const store = await window.electron.getStore(StoreNameMap.LyricsCache);
+      if (loadId !== lyricsLoadIdRef.current) return;
       const cached = store?.[key];
       const lines = parseLrcToLines(cached?.lyrics);
       // 应用歌词缓存里保存的偏移（切歌时重置为缓存值/0）
@@ -243,13 +246,13 @@ const MiniPlayer = () => {
         if (result?.lyrics.length) nextLines = result.lyrics;
       }
 
-      if (nextLines.length) {
+      if (nextLines.length && loadId === lyricsLoadIdRef.current) {
         usePlayState.getState().update({ ...usePlayState.getState(), lyrics: nextLines });
       }
     } catch {
       // 静默失败
     } finally {
-      lyricsLoadingRef.current = false;
+      if (loadId === lyricsLoadIdRef.current) lyricsLoadingRef.current = false;
     }
   };
 
@@ -258,8 +261,19 @@ const MiniPlayer = () => {
     postMessage("init");
 
     bcRef.current.onmessage = ev => {
-      const { from, type, offset, state } = ev.data || {};
+      const { from, type, offset, state, bvid, cid, lyrics: updatedLyrics } = ev.data || {};
       if (from !== "main") return;
+
+      if (type === "lyricsUpdated") {
+        const current = usePlayState.getState();
+        if (bvid === current.bvid && cid === current.cid && typeof updatedLyrics === "string") {
+          lyricsLoadIdRef.current += 1;
+          lyricsLoadingRef.current = false;
+          loadedLyricsKeyRef.current = `${bvid}-${cid}`;
+          current.update({ ...current, lyrics: parseLrcToLines(updatedLyrics) });
+        }
+        return;
+      }
 
       // 0. 歌词偏移实时同步：主窗口调整歌词偏移时同步应用
       if (type === "lyricsOffset" && typeof offset === "number") {

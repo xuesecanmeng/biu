@@ -61,6 +61,21 @@ afterEach(async () => {
 });
 
 describe("desktop lyrics integration", () => {
+  test("keeps edited lyrics when an older automatic lookup completes", async () => {
+    let finishLookup!: (value: unknown) => void;
+    getLyricsAuto.mockReturnValueOnce(
+      new Promise(resolve => {
+        finishLookup = resolve;
+      }),
+    );
+    await receive({ from: "main", state: { bvid: "BV2", cid: "2", currentTime: 0 } });
+    await receive({ from: "main", type: "lyricsUpdated", bvid: "BV2", cid: "2", lyrics: "[00:00.123]手工编辑" });
+    await act(async () => finishLookup({ lyrics: [{ time: 0, text: "旧搜索结果" }] }));
+    expect(container.textContent).toContain("手工编辑");
+    expect(container.textContent).not.toContain("旧搜索结果");
+    await receive({ from: "main", type: "lyricsUpdated", bvid: "BV1", cid: "1", lyrics: "[00:00]其他歌曲" });
+    expect(container.textContent).toContain("手工编辑");
+  });
   test("uses cached offset and accepts the mini-player live offset message", async () => {
     await receive({ from: "main", state: { bvid: "BV1", cid: "1", currentTime: 8 } });
     expect(container.textContent).toContain("第二行");
