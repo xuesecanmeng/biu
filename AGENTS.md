@@ -20,7 +20,7 @@ Biu 是基于哔哩哔哩（B 站）公开接口的跨平台桌面音乐播放�
 - **仓库**: `https://github.com/xRetia/biu`
 - **许可**: PolyForm Noncommercial 1.0.0
 - **包管理器**: pnpm 10.24.0
-- **Node 要求**: 22.17.1
+- **Node 要求**: 24.14.1
 
 ## 技术栈
 
