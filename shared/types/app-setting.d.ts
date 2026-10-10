@@ -48,4 +48,10 @@ interface AppSettings {
   sideMenuCollapsedCenter: boolean;
   /** 窗口七彩跑马灯开关（BPM 联动） */
   marqueeEnabled: boolean;
+  /** 桌面歌词字体大小 */
+  desktopLyricsFontSize: number;
+  /** 桌面歌词颜色 */
+  desktopLyricsColor: string;
+  /** 桌面歌词字体 */
+  desktopLyricsFontFamily: string;
 }

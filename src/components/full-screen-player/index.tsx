@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 
 import { Drawer, DrawerBody, DrawerContent, Image, Modal, ModalBody, ModalContent, ModalHeader } from "@heroui/react";
-import { RiArrowDownSLine, RiArrowLeftSLine, RiArrowRightSLine, RiSettings3Line } from "@remixicon/react";
+import { RiArrowDownSLine, RiArrowLeftSLine, RiArrowRightSLine, RiSettings3Line, RiTBoxLine } from "@remixicon/react";
 import { useClickAway } from "ahooks";
 import clsx from "classnames";
 import { readableColor } from "color2k";
@@ -302,6 +302,14 @@ const FullScreenPlayer = () => {
                   <h2 className="max-w-[40vw] truncate text-base font-medium text-white select-none">
                     {playItem.pageTitle || playItem.title}
                   </h2>
+                  <IconButton
+                    aria-label="桌面歌词"
+                    tooltip="桌面歌词"
+                    className="text-white"
+                    onPress={() => window.electron.toggleDesktopLyrics()}
+                  >
+                    <RiTBoxLine size={20} />
+                  </IconButton>
                   <IconButton
                     title="设置"
                     tooltip="设置"

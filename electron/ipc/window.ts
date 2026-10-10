@@ -1,6 +1,11 @@
 import { BrowserWindow, ipcMain } from "electron";
 
 import { createMiniPlayer, destroyMiniPlayer, miniPlayer } from "../mini-player";
+import {
+  getDesktopLyricsWindow,
+  toggleDesktopLyricsWindow,
+  updateDesktopLyricsLockStatus,
+} from "../windows/desktop-lyrics";
 import { channel } from "./channel";
 
 export function registerWindowHandlers({ getMainWindow }) {
@@ -45,6 +50,34 @@ export function registerWindowHandlers({ getMainWindow }) {
       createMiniPlayer();
     }
   });
+
+  ipcMain.handle(channel.window.toggleDesktopLyrics, () => {
+    toggleDesktopLyricsWindow();
+  });
+
+  ipcMain.handle(channel.window.setDesktopLyricsLock, (event, isLocked: boolean) => {
+    if (event.sender !== getDesktopLyricsWindow()?.webContents) return;
+    if (typeof isLocked !== "boolean") throw new TypeError("Invalid desktop lyrics lock state");
+    updateDesktopLyricsLockStatus(isLocked);
+  });
+
+  ipcMain.handle(
+    channel.window.setDesktopLyricsIgnoreMouseEvents,
+    (event, ignore: boolean, options?: { forward: boolean }) => {
+      const win = getDesktopLyricsWindow();
+      if (event.sender !== win?.webContents) return;
+      if (typeof ignore !== "boolean" || (options !== undefined && typeof options?.forward !== "boolean")) {
+        throw new TypeError("Invalid desktop lyrics mouse event options");
+      }
+      if (win && !win.isDestroyed()) {
+        if (options) {
+          win.setIgnoreMouseEvents(ignore, options);
+        } else {
+          win.setIgnoreMouseEvents(ignore);
+        }
+      }
+    },
+  );
 
   ipcMain.on(channel.window.toggleDevTools, event => {
     const win = BrowserWindow.fromWebContents(event.sender);

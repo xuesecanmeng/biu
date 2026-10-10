@@ -34,6 +34,9 @@ const useSystemSettingsForm = () => {
     reportPlayHistory,
     sideMenuCollapsedCenter,
     marqueeEnabled,
+    desktopLyricsFontSize,
+    desktopLyricsColor,
+    desktopLyricsFontFamily,
   } = useSettings(
     useShallow(s => ({
       fontFamily: s.fontFamily,
@@ -54,6 +57,9 @@ const useSystemSettingsForm = () => {
       reportPlayHistory: s.reportPlayHistory,
       sideMenuCollapsedCenter: s.sideMenuCollapsedCenter,
       marqueeEnabled: s.marqueeEnabled,
+      desktopLyricsFontSize: s.desktopLyricsFontSize,
+      desktopLyricsColor: s.desktopLyricsColor,
+      desktopLyricsFontFamily: s.desktopLyricsFontFamily,
     })),
   );
   const updateSettings = useSettings(s => s.update);
@@ -90,6 +96,9 @@ const useSystemSettingsForm = () => {
       reportPlayHistory,
       sideMenuCollapsedCenter,
       marqueeEnabled,
+      desktopLyricsFontSize,
+      desktopLyricsColor,
+      desktopLyricsFontFamily,
     },
   });
 

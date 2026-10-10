@@ -33,4 +33,7 @@ export const defaultAppSettings: AppSettings = {
   playbarCollapsed: false,
   sideMenuCollapsedCenter: true,
   marqueeEnabled: false,
+  desktopLyricsFontSize: 36,
+  desktopLyricsColor: "#60a5fa",
+  desktopLyricsFontFamily: "system-ui",
 };

@@ -1,4 +1,4 @@
-import { RiArrowDownSLine } from "@remixicon/react";
+import { RiArrowDownSLine, RiTBoxLine } from "@remixicon/react";
 
 import IconButton from "@/components/icon-button";
 import MusicDownloadButton from "@/components/music-download-button";
@@ -17,6 +17,9 @@ const RightControl = () => {
   return (
     <div className="flex h-full items-center justify-end gap-1">
       <MusicPlayMode />
+      <IconButton aria-label="桌面歌词" tooltip="桌面歌词" onPress={() => window.electron.toggleDesktopLyrics()}>
+        <RiTBoxLine size={18} />
+      </IconButton>
       {Boolean(playId) && getPlayItem()?.source !== "local" && <MusicDownloadButton />}
       <OpenPlaylistDrawerButton />
       <MusicVolume />

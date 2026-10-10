@@ -16,6 +16,7 @@ import { registerAllShortcuts, unregisterAllShortcuts } from "./shortcut";
 import { appSettingsStore } from "./store";
 import { autoUpdater, setupAutoUpdater, stopCheckForUpdates } from "./updater";
 import { getWindowIcon } from "./utils";
+import { destroyDesktopLyricsWindow } from "./windows/desktop-lyrics";
 import { setupWindowsThumbar } from "./windows/thumbar";
 import { createTray, destroyTray } from "./windows/tray"; // 托盘功能
 
@@ -127,6 +128,11 @@ function createWindow() {
         mainWindow = null;
       }
     }
+  });
+
+  mainWindow.on("closed", () => {
+    destroyDesktopLyricsWindow();
+    mainWindow = null;
   });
 }
 
