@@ -1,0 +1,37 @@
+diff --git a/dist/base/listbox-item-base.d.ts b/dist/base/listbox-item-base.d.ts
+index 7417408..d02d016 100644
+--- a/dist/base/listbox-item-base.d.ts
++++ b/dist/base/listbox-item-base.d.ts
+@@ -94,6 +94,6 @@ type ListboxItemBaseProps<T extends object = {}> = Omit<Props<T>, "onClick"> & O
+      */
+     onClick?: (e: React.MouseEvent<HTMLLIElement | HTMLAnchorElement>) => void;
+ };
+-declare const ListboxItemBase: <T extends object>(props: Omit<ListboxItemBaseProps<T>, "value">) => JSX.Element;
++declare const ListboxItemBase: <T extends object>(props: Omit<ListboxItemBaseProps<T>, "value">) => React.JSX.Element;
+ 
+ export { type ListboxItemBaseProps, type ListboxItemSelectedIconProps, ListboxItemBase as default };
+diff --git a/dist/base/listbox-section-base.d.ts b/dist/base/listbox-section-base.d.ts
+index f112a89..5469a42 100644
+--- a/dist/base/listbox-section-base.d.ts
++++ b/dist/base/listbox-section-base.d.ts
+@@ -36,6 +36,6 @@ interface ListboxSectionBaseProps<T extends object = {}> extends SectionProps<"u
+      */
+     dividerProps?: DividerProps;
+ }
+-declare const ListboxSectionBase: <T extends object>(props: ListboxSectionBaseProps<T>) => JSX.Element;
++declare const ListboxSectionBase: <T extends object>(props: ListboxSectionBaseProps<T>) => React.JSX.Element;
+ 
+ export { type ListboxSectionBaseProps, ListboxSectionBase as default };
+diff --git a/dist/use-listbox.d.ts b/dist/use-listbox.d.ts
+index 442b1cb..310a585 100644
+--- a/dist/use-listbox.d.ts
++++ b/dist/use-listbox.d.ts
+@@ -200,7 +200,7 @@ declare function useListbox<T extends object>(props: UseListboxProps<T>): {
+     classNames: SlotsToClasses<"base" | "list" | "emptyContent"> | undefined;
+     topContent: ReactNode;
+     bottomContent: ReactNode;
+-    emptyContent: string | number | boolean | react.ReactElement<any, string | react.JSXElementConstructor<any>> | react.ReactFragment | null;
++    emptyContent: string | number | boolean | react.ReactElement<any, string | react.JSXElementConstructor<any>> | Iterable<react.ReactNode> | null;
+     hideEmptyContent: boolean;
+     shouldHighlightOnFocus: boolean;
+     hideSelectedIcon: boolean;

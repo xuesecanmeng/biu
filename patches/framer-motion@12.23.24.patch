@@ -1,0 +1,35 @@
+diff --git a/dist/types/index.d.ts b/dist/types/index.d.ts
+index 8c9b53a60026e020aee597304c8b081e3d447344..37a4a9143c8c84c01329f5f1b4f6af3ff1928dd8 100644
+--- a/dist/types/index.d.ts
++++ b/dist/types/index.d.ts
+@@ -512,7 +512,7 @@ interface Props$1<V, TagName extends ReorderElementTag = DefaultGroupElement> {
+     values: V[];
+ }
+ type ReorderGroupProps<V, TagName extends ReorderElementTag = DefaultGroupElement> = Props$1<V, TagName> & Omit<HTMLMotionProps<TagName>, "values"> & React$1.PropsWithChildren<{}>;
+-declare function ReorderGroupComponent<V, TagName extends ReorderElementTag = DefaultGroupElement>({ children, as, axis, onReorder, values, ...props }: ReorderGroupProps<V, TagName>, externalRef?: React$1.ForwardedRef<any>): JSX.Element;
++declare function ReorderGroupComponent<V, TagName extends ReorderElementTag = DefaultGroupElement>({ children, as, axis, onReorder, values, ...props }: ReorderGroupProps<V, TagName>, externalRef?: React$1.ForwardedRef<any>): React.JSX.Element;
+ declare const ReorderGroup: <V, TagName extends keyof HTMLElements = "ul">(props: ReorderGroupProps<V, TagName> & {
+     ref?: React$1.ForwardedRef<any>;
+ }) => ReturnType<typeof ReorderGroupComponent>;
+@@ -539,7 +539,7 @@ interface Props<V, TagName extends ReorderElementTag = DefaultItemElement> {
+     layout?: true | "position";
+ }
+ type ReorderItemProps<V, TagName extends ReorderElementTag = DefaultItemElement> = Props<V, TagName> & Omit<HTMLMotionProps<TagName>, "value" | "layout"> & React$1.PropsWithChildren<{}>;
+-declare function ReorderItemComponent<V, TagName extends ReorderElementTag = DefaultItemElement>({ children, style, value, as, onDrag, layout, ...props }: ReorderItemProps<V, TagName>, externalRef?: React$1.ForwardedRef<any>): JSX.Element;
++declare function ReorderItemComponent<V, TagName extends ReorderElementTag = DefaultItemElement>({ children, style, value, as, onDrag, layout, ...props }: ReorderItemProps<V, TagName>, externalRef?: React$1.ForwardedRef<any>): React.JSX.Element;
+ declare const ReorderItem: <V, TagName extends keyof HTMLElements = "li">(props: ReorderItemProps<V, TagName> & {
+     ref?: React$1.ForwardedRef<any>;
+ }) => ReturnType<typeof ReorderItemComponent>;
+diff --git a/dist/types.d-BJcRxCew.d.ts b/dist/types.d-BJcRxCew.d.ts
+index 0e3cd3ed3e0ae3fe566d498cf1fd952422e6db25..0fca32e6494a769d8918c67f6e1eb4212f9f9780 100644
+--- a/dist/types.d-BJcRxCew.d.ts
++++ b/dist/types.d-BJcRxCew.d.ts
+@@ -21,7 +21,7 @@ type MakeMotionHelper<T> = {
+ };
+ type MakeCustomValueTypeHelper<T> = MakeMotionHelper<T>;
+ type MakeMotion<T> = MakeCustomValueTypeHelper<T>;
+-type MotionCSS = MakeMotion<Omit<CSSProperties, "rotate" | "scale" | "perspective">>;
++type MotionCSS = MakeMotion<Omit<CSSProperties, keyof TransformProperties | keyof SVGPathProperties>>;
+ /**
+  * @public
+  */

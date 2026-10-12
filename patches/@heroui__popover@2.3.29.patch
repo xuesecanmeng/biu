@@ -1,0 +1,44 @@
+diff --git a/dist/popover-context.d.ts b/dist/popover-context.d.ts
+index 6892244..e8ed034 100644
+--- a/dist/popover-context.d.ts
++++ b/dist/popover-context.d.ts
+@@ -10,7 +10,7 @@ declare const PopoverProvider: React.Provider<{
+     children: React.ReactNode;
+     classNames: _heroui_theme.SlotsToClasses<"base" | "content" | "trigger" | "backdrop" | "arrow"> | undefined;
+     showArrow: boolean;
+-    triggerRef: React.RefObject<HTMLElement>;
++    triggerRef: React.RefObject<HTMLElement | null>;
+     placement: "center" | "top" | "bottom" | "left" | "right" | "top-start" | "top-end" | "bottom-start" | "bottom-end" | "left-start" | "left-end" | "right-start" | "right-end" | null;
+     isNonModal: boolean;
+     popoverRef: React.RefObject<HTMLDivElement>;
+@@ -33,7 +33,7 @@ declare const usePopoverContext: () => {
+     children: React.ReactNode;
+     classNames: _heroui_theme.SlotsToClasses<"base" | "content" | "trigger" | "backdrop" | "arrow"> | undefined;
+     showArrow: boolean;
+-    triggerRef: React.RefObject<HTMLElement>;
++    triggerRef: React.RefObject<HTMLElement | null>;
+     placement: "center" | "top" | "bottom" | "left" | "right" | "top-start" | "top-end" | "bottom-start" | "bottom-end" | "left-start" | "left-end" | "right-start" | "right-end" | null;
+     isNonModal: boolean;
+     popoverRef: React.RefObject<HTMLDivElement>;
+diff --git a/dist/use-popover.d.ts b/dist/use-popover.d.ts
+index 9e9ed5e..e429ca7 100644
+--- a/dist/use-popover.d.ts
++++ b/dist/use-popover.d.ts
+@@ -24,7 +24,7 @@ interface Props extends HTMLHeroUIProps<"div"> {
+     /**
+      * The ref for the element which the overlay positions itself with respect to.
+      */
+-    triggerRef?: RefObject<HTMLElement>;
++    triggerRef?: RefObject<HTMLElement | null>;
+     /**
+      * Whether the scroll event should be blocked when the overlay is open.
+      * @default true
+@@ -76,7 +76,7 @@ declare function usePopover(originalProps: UsePopoverProps): {
+     children: React.ReactNode;
+     classNames: SlotsToClasses<"base" | "content" | "trigger" | "backdrop" | "arrow"> | undefined;
+     showArrow: boolean;
+-    triggerRef: RefObject<HTMLElement>;
++    triggerRef: RefObject<HTMLElement | null>;
+     placement: "center" | "top" | "bottom" | "left" | "right" | "top-start" | "top-end" | "bottom-start" | "bottom-end" | "left-start" | "left-end" | "right-start" | "right-end" | null;
+     isNonModal: boolean;
+     popoverRef: RefObject<HTMLDivElement>;

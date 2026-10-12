@@ -1,0 +1,17 @@
+diff --git a/module.d.ts b/module.d.ts
+index 8618cd162415f6849ae640fb183124b7deb8fdfb..7fd960ea7ccce02790592b10fcb6b3046893cf1d 100644
+--- a/module.d.ts
++++ b/module.d.ts
+@@ -262,10 +262,10 @@ declare var __non_webpack_require__: (id: any) => unknown;
+ declare const __system_context__: object;
+ 
+ declare namespace NodeJS {
+-  interface Module extends Rspack.Module {}
++  interface Module extends Omit<Rspack.Module, "children"> {}
+   interface Require extends Rspack.Require {}
+   interface RequireResolve extends Rspack.RequireResolve {}
+-  interface Process extends Rspack.Process {}
++  interface Process extends Omit<Rspack.Process, "env"> {}
+ }
+ 
+ declare var module: NodeJS.Module;

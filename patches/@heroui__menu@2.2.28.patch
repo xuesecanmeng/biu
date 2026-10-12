@@ -1,0 +1,24 @@
+diff --git a/dist/base/menu-item-base.d.ts b/dist/base/menu-item-base.d.ts
+index e1dc179..e0f4fe3 100644
+--- a/dist/base/menu-item-base.d.ts
++++ b/dist/base/menu-item-base.d.ts
+@@ -93,6 +93,6 @@ type MenuItemBaseProps<T extends object = {}> = Omit<Props<T>, "onClick"> & Omit
+      */
+     onClick?: MouseEventHandler<HTMLLIElement | HTMLAnchorElement>;
+ };
+-declare const MenuItemBase: <T extends object>(props: MenuItemBaseProps<T>) => JSX.Element;
++declare const MenuItemBase: <T extends object>(props: MenuItemBaseProps<T>) => React.JSX.Element;
+ 
+ export { type MenuItemBaseProps, type MenuItemSelectedIconProps, MenuItemBase as default };
+diff --git a/dist/base/menu-section-base.d.ts b/dist/base/menu-section-base.d.ts
+index d830009..60cdad0 100644
+--- a/dist/base/menu-section-base.d.ts
++++ b/dist/base/menu-section-base.d.ts
+@@ -36,6 +36,6 @@ interface MenuSectionBaseProps<T extends object = {}> extends SectionProps<"ul",
+      */
+     dividerProps?: DividerProps;
+ }
+-declare const MenuSectionBase: <T extends object>(props: MenuSectionBaseProps<T>) => JSX.Element;
++declare const MenuSectionBase: <T extends object>(props: MenuSectionBaseProps<T>) => React.JSX.Element;
+ 
+ export { type MenuSectionBaseProps, MenuSectionBase as default };

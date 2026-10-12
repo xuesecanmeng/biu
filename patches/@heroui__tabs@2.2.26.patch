@@ -1,0 +1,12 @@
+diff --git a/dist/base/tab-item-base.d.ts b/dist/base/tab-item-base.d.ts
+index e9a0e6b..9846af2 100644
+--- a/dist/base/tab-item-base.d.ts
++++ b/dist/base/tab-item-base.d.ts
+@@ -23,6 +23,6 @@ interface Props<T extends object = {}> extends Omit<ItemProps<"button", T>, "chi
+     tabRef?: RefObject<HTMLButtonElement>;
+ }
+ type TabItemProps<T extends object = {}> = Props<T>;
+-declare const TabItemBase: <T extends object>(props: TabItemProps<T>) => JSX.Element;
++declare const TabItemBase: <T extends object>(props: TabItemProps<T>) => React.JSX.Element;
+ 
+ export { type TabItemProps, TabItemBase as default };

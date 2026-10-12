@@ -1,0 +1,3951 @@
+diff --git a/dist/components/accordion.d.ts b/dist/components/accordion.d.ts
+index 0ecb56e..54b9cd6 100644
+--- a/dist/components/accordion.d.ts
++++ b/dist/components/accordion.d.ts
+@@ -31,17 +31,7 @@ declare const accordion: tailwind_variants.TVReturnType<{
+     fullWidth: {
+         true: string;
+     };
+-}, undefined, tailwind_variants.TVReturnType<{
+-    variant: {
+-        light: string;
+-        shadow: string;
+-        bordered: string;
+-        splitted: string;
+-    };
+-    fullWidth: {
+-        true: string;
+-    };
+-}, undefined, "px-2", unknown, unknown, undefined>>;
++}, undefined, undefined>;
+ /**
+  * AccordionItem wrapper **Tailwind Variants** component
+  *
+@@ -168,59 +158,7 @@ declare const accordionItem: tailwind_variants.TVReturnType<{
+     title: string;
+     subtitle: string;
+     content: string;
+-}, tailwind_variants.TVReturnType<{
+-    variant: {
+-        splitted: {
+-            base: string;
+-        };
+-    };
+-    isCompact: {
+-        true: {
+-            trigger: string;
+-            title: string;
+-            subtitle: string;
+-            indicator: string;
+-            content: string;
+-        };
+-    };
+-    isDisabled: {
+-        true: {
+-            base: string;
+-        };
+-    };
+-    hideIndicator: {
+-        true: {
+-            indicator: string;
+-        };
+-    };
+-    disableAnimation: {
+-        true: {
+-            content: string;
+-        };
+-        false: {
+-            indicator: string;
+-            trigger: string;
+-        };
+-    };
+-    disableIndicatorAnimation: {
+-        true: {
+-            indicator: string;
+-        };
+-        false: {
+-            indicator: string;
+-        };
+-    };
+-}, {
+-    base: string;
+-    heading: string;
+-    trigger: string[];
+-    startContent: string;
+-    indicator: string;
+-    titleWrapper: string;
+-    title: string;
+-    subtitle: string;
+-    content: string;
+-}, undefined, unknown, unknown, undefined>>;
++}, undefined>;
+ type AccordionGroupVariantProps = VariantProps<typeof accordion>;
+ type AccordionItemVariantProps = VariantProps<typeof accordionItem>;
+ type AccordionItemSlots = keyof ReturnType<typeof accordionItem>;
+diff --git a/dist/components/alert.d.ts b/dist/components/alert.d.ts
+index 81744fd..f66b79b 100644
+--- a/dist/components/alert.d.ts
++++ b/dist/components/alert.d.ts
+@@ -143,68 +143,7 @@ declare const alert: tailwind_variants.TVReturnType<{
+     closeButton: string;
+     iconWrapper: string;
+     alertIcon: string;
+-}, tailwind_variants.TVReturnType<{
+-    color: {
+-        default: {};
+-        primary: {};
+-        secondary: {};
+-        success: {};
+-        warning: {};
+-        danger: {};
+-    };
+-    variant: {
+-        solid: {};
+-        flat: {};
+-        faded: {
+-            base: string;
+-        };
+-        bordered: {
+-            base: string;
+-        };
+-    };
+-    radius: {
+-        none: {
+-            base: string;
+-        };
+-        sm: {
+-            base: string;
+-        };
+-        md: {
+-            base: string;
+-        };
+-        lg: {
+-            base: string;
+-        };
+-        full: {
+-            base: string;
+-        };
+-    };
+-    hideIcon: {
+-        true: {
+-            iconWrapper: string;
+-        };
+-    };
+-    hideIconWrapper: {
+-        true: {
+-            base: string;
+-            iconWrapper: string;
+-        };
+-    };
+-    hasContent: {
+-        false: {
+-            base: string;
+-            mainWrapper: string;
+-        };
+-    };
+-}, {
+-    base: string;
+-    mainWrapper: string;
+-    title: string;
+-    description: string;
+-    closeButton: string;
+-    iconWrapper: string;
+-    alertIcon: string;
+-}, undefined, unknown, unknown, undefined>>;
++}, undefined>;
+ type AlertVariantProps = VariantProps<typeof alert>;
+ type AlertSlots = keyof ReturnType<typeof alert>;
+ 
+diff --git a/dist/components/autocomplete.d.ts b/dist/components/autocomplete.d.ts
+index 44490ee..b238ee1 100644
+--- a/dist/components/autocomplete.d.ts
++++ b/dist/components/autocomplete.d.ts
+@@ -59,36 +59,7 @@ declare const autocomplete: tailwind_variants.TVReturnType<{
+     endContentWrapper: string;
+     clearButton: string[];
+     selectorButton: string;
+-}, tailwind_variants.TVReturnType<{
+-    isClearable: {
+-        true: {};
+-        false: {
+-            clearButton: string;
+-        };
+-    };
+-    disableAnimation: {
+-        true: {
+-            selectorButton: string;
+-        };
+-        false: {
+-            selectorButton: string;
+-        };
+-    };
+-    disableSelectorIconRotation: {
+-        true: {};
+-        false: {
+-            selectorButton: string;
+-        };
+-    };
+-}, {
+-    base: string;
+-    listboxWrapper: string;
+-    listbox: string;
+-    popoverContent: string;
+-    endContentWrapper: string;
+-    clearButton: string[];
+-    selectorButton: string;
+-}, undefined, unknown, unknown, undefined>>;
++}, undefined>;
+ type AutocompleteVariantProps = VariantProps<typeof autocomplete>;
+ type AutocompleteSlots = keyof ReturnType<typeof autocomplete>;
+ 
+diff --git a/dist/components/avatar.d.ts b/dist/components/avatar.d.ts
+index 5f75f26..63902b7 100644
+--- a/dist/components/avatar.d.ts
++++ b/dist/components/avatar.d.ts
+@@ -177,89 +177,7 @@ declare const avatar: tailwind_variants.TVReturnType<{
+     fallback: string[];
+     name: string[];
+     icon: string[];
+-}, tailwind_variants.TVReturnType<{
+-    size: {
+-        sm: {
+-            base: string;
+-        };
+-        md: {
+-            base: string;
+-        };
+-        lg: {
+-            base: string;
+-        };
+-    };
+-    color: {
+-        default: {
+-            base: string;
+-        };
+-        primary: {
+-            base: string;
+-        };
+-        secondary: {
+-            base: string;
+-        };
+-        success: {
+-            base: string;
+-        };
+-        warning: {
+-            base: string;
+-        };
+-        danger: {
+-            base: string;
+-        };
+-    };
+-    radius: {
+-        none: {
+-            base: string;
+-        };
+-        sm: {
+-            base: string;
+-        };
+-        md: {
+-            base: string;
+-        };
+-        lg: {
+-            base: string;
+-        };
+-        full: {
+-            base: string;
+-        };
+-    };
+-    isBordered: {
+-        true: {
+-            base: string;
+-        };
+-    };
+-    isDisabled: {
+-        true: {
+-            base: string;
+-        };
+-    };
+-    isInGroup: {
+-        true: {
+-            base: string[];
+-        };
+-    };
+-    isInGridGroup: {
+-        true: {
+-            base: string;
+-        };
+-    };
+-    disableAnimation: {
+-        true: {
+-            base: string;
+-            img: string;
+-        };
+-        false: {};
+-    };
+-}, {
+-    base: string[];
+-    img: string[];
+-    fallback: string[];
+-    name: string[];
+-    icon: string[];
+-}, undefined, unknown, unknown, undefined>>;
++}, undefined>;
+ /**
+  * AvatarGroup wrapper **Tailwind Variants** component
+  *
+@@ -284,14 +202,7 @@ declare const avatarGroup: tailwind_variants.TVReturnType<{
+ }, {
+     base: string;
+     count: string;
+-}, tailwind_variants.TVReturnType<{
+-    isGrid: {
+-        true: string;
+-    };
+-}, {
+-    base: string;
+-    count: string;
+-}, undefined, unknown, unknown, undefined>>;
++}, undefined>;
+ type AvatarGroupVariantProps = VariantProps<typeof avatarGroup>;
+ type AvatarGroupSlots = keyof ReturnType<typeof avatarGroup>;
+ type AvatarVariantProps = VariantProps<typeof avatar>;
+diff --git a/dist/components/badge.d.ts b/dist/components/badge.d.ts
+index 6ba4c32..6e3aa10 100644
+--- a/dist/components/badge.d.ts
++++ b/dist/components/badge.d.ts
+@@ -148,75 +148,7 @@ declare const badge: tailwind_variants.TVReturnType<{
+ }, {
+     base: string[];
+     badge: string[];
+-}, tailwind_variants.TVReturnType<{
+-    variant: {
+-        solid: {};
+-        flat: {};
+-        faded: {
+-            badge: string;
+-        };
+-        shadow: {};
+-    };
+-    color: {
+-        default: {};
+-        primary: {};
+-        secondary: {};
+-        success: {};
+-        warning: {};
+-        danger: {};
+-    };
+-    size: {
+-        sm: {
+-            badge: string;
+-        };
+-        md: {
+-            badge: string;
+-        };
+-        lg: {
+-            badge: string;
+-        };
+-    };
+-    placement: {
+-        "top-right": {};
+-        "top-left": {};
+-        "bottom-right": {};
+-        "bottom-left": {};
+-    };
+-    shape: {
+-        circle: {};
+-        rectangle: {};
+-    };
+-    isInvisible: {
+-        true: {};
+-    };
+-    isOneChar: {
+-        true: {
+-            badge: string;
+-        };
+-    };
+-    isDot: {
+-        true: {};
+-    };
+-    disableAnimation: {
+-        true: {
+-            badge: string;
+-        };
+-        false: {
+-            badge: string;
+-        };
+-    };
+-    showOutline: {
+-        true: {
+-            badge: string;
+-        };
+-        false: {
+-            badge: string;
+-        };
+-    };
+-}, {
+-    base: string[];
+-    badge: string[];
+-}, undefined, unknown, unknown, undefined>>;
++}, undefined>;
+ type BadgeVariantProps = VariantProps<typeof badge>;
+ type BadgeSlots = keyof ReturnType<typeof badge>;
+ 
+diff --git a/dist/components/breadcrumbs.d.ts b/dist/components/breadcrumbs.d.ts
+index 153603b..74f2b55 100644
+--- a/dist/components/breadcrumbs.d.ts
++++ b/dist/components/breadcrumbs.d.ts
+@@ -170,88 +170,7 @@ declare const breadcrumbItem: tailwind_variants.TVReturnType<{
+     base: string;
+     item: string[];
+     separator: string;
+-}, tailwind_variants.TVReturnType<{
+-    color: {
+-        foreground: {
+-            item: string;
+-            separator: string;
+-        };
+-        primary: {
+-            item: string;
+-            separator: string;
+-        };
+-        secondary: {
+-            item: string;
+-            separator: string;
+-        };
+-        success: {
+-            item: string;
+-            separator: string;
+-        };
+-        warning: {
+-            item: string;
+-            separator: string;
+-        };
+-        danger: {
+-            item: string;
+-            separator: string;
+-        };
+-    };
+-    size: {
+-        sm: {
+-            item: string;
+-        };
+-        md: {
+-            item: string;
+-        };
+-        lg: {
+-            item: string;
+-        };
+-    };
+-    underline: {
+-        none: {
+-            item: string;
+-        };
+-        hover: {
+-            item: string;
+-        };
+-        always: {
+-            item: string;
+-        };
+-        active: {
+-            item: string;
+-        };
+-        focus: {
+-            item: string;
+-        };
+-    };
+-    isCurrent: {
+-        true: {
+-            item: string;
+-        };
+-        false: {
+-            item: string[];
+-        };
+-    };
+-    isDisabled: {
+-        true: {
+-            item: string;
+-            separator: string;
+-        };
+-    };
+-    disableAnimation: {
+-        false: {
+-            item: string;
+-        };
+-        true: {
+-            item: string;
+-        };
+-    };
+-}, {
+-    base: string;
+-    item: string[];
+-    separator: string;
+-}, undefined, unknown, unknown, undefined>>;
++}, undefined>;
+ /**
+  * Breadcrumbs wrapper **Tailwind Variants** component
+  *
+@@ -333,44 +252,7 @@ declare const breadcrumbs: tailwind_variants.TVReturnType<{
+     list: string;
+     ellipsis: string;
+     separator: string;
+-}, tailwind_variants.TVReturnType<{
+-    size: {
+-        sm: {};
+-        md: {};
+-        lg: {};
+-    };
+-    radius: {
+-        none: {
+-            list: string;
+-        };
+-        sm: {
+-            list: string;
+-        };
+-        md: {
+-            list: string;
+-        };
+-        lg: {
+-            list: string;
+-        };
+-        full: {
+-            list: string;
+-        };
+-    };
+-    variant: {
+-        solid: {
+-            list: string;
+-        };
+-        bordered: {
+-            list: string;
+-        };
+-        light: {};
+-    };
+-}, {
+-    base: string;
+-    list: string;
+-    ellipsis: string;
+-    separator: string;
+-}, undefined, unknown, unknown, undefined>>;
++}, undefined>;
+ type BreadcrumbsVariantProps = VariantProps<typeof breadcrumbs>;
+ type BreadcrumbsSlots = keyof ReturnType<typeof breadcrumbs>;
+ type BreadcrumbItemVariantProps = VariantProps<typeof breadcrumbItem>;
+diff --git a/dist/components/button.d.ts b/dist/components/button.d.ts
+index 164a3d9..3ce8aa8 100644
+--- a/dist/components/button.d.ts
++++ b/dist/components/button.d.ts
+@@ -111,54 +111,7 @@ declare const button: tailwind_variants.TVReturnType<{
+         true: string;
+         false: string;
+     };
+-}, undefined, tailwind_variants.TVReturnType<{
+-    variant: {
+-        solid: string;
+-        bordered: string;
+-        light: string;
+-        flat: string;
+-        faded: string;
+-        shadow: string;
+-        ghost: string;
+-    };
+-    size: {
+-        sm: string;
+-        md: string;
+-        lg: string;
+-    };
+-    color: {
+-        default: string;
+-        primary: string;
+-        secondary: string;
+-        success: string;
+-        warning: string;
+-        danger: string;
+-    };
+-    radius: {
+-        none: string;
+-        sm: string;
+-        md: string;
+-        lg: string;
+-        full: string;
+-    };
+-    fullWidth: {
+-        true: string;
+-    };
+-    isDisabled: {
+-        true: string;
+-    };
+-    isInGroup: {
+-        true: string;
+-    };
+-    isIconOnly: {
+-        true: string;
+-        false: string;
+-    };
+-    disableAnimation: {
+-        true: string;
+-        false: string;
+-    };
+-}, undefined, string[], unknown, unknown, undefined>>;
++}, undefined, undefined>;
+ /**
+  * ButtonGroup wrapper **Tailwind Variants** component
+  *
+@@ -177,11 +130,7 @@ declare const buttonGroup: tailwind_variants.TVReturnType<{
+     fullWidth: {
+         true: string;
+     };
+-}, undefined, tailwind_variants.TVReturnType<{
+-    fullWidth: {
+-        true: string;
+-    };
+-}, undefined, "inline-flex items-center justify-center h-auto", unknown, unknown, undefined>>;
++}, undefined, undefined>;
+ type ButtonGroupVariantProps = VariantProps<typeof buttonGroup>;
+ type ButtonVariantProps = VariantProps<typeof button>;
+ 
+diff --git a/dist/components/calendar.d.ts b/dist/components/calendar.d.ts
+index de84d7c..efb8c9e 100644
+--- a/dist/components/calendar.d.ts
++++ b/dist/components/calendar.d.ts
+@@ -181,97 +181,7 @@ declare const calendar: tailwind_variants.TVReturnType<{
+     pickerItem: string[];
+     helperWrapper: string;
+     errorMessage: string;
+-}, tailwind_variants.TVReturnType<{
+-    color: {
+-        foreground: {};
+-        primary: {};
+-        secondary: {};
+-        success: {};
+-        warning: {};
+-        danger: {};
+-    };
+-    isRange: {
+-        true: {
+-            cellButton: string[];
+-        };
+-        false: {};
+-    };
+-    hideDisabledDates: {
+-        true: {
+-            cellButton: string;
+-        };
+-        false: {};
+-    };
+-    isHeaderWrapperExpanded: {
+-        true: {
+-            headerWrapper: string[];
+-            pickerWrapper: string;
+-            gridWrapper: string;
+-            grid: string;
+-            nextButton: string;
+-            prevButton: string;
+-        };
+-        false: {};
+-    };
+-    showMonthAndYearPickers: {
+-        true: {
+-            base: string;
+-            header: string;
+-        };
+-        false: {};
+-    };
+-    showShadow: {
+-        true: {
+-            cellButton: string;
+-        };
+-        false: {
+-            cellButton: string;
+-        };
+-    };
+-    disableAnimation: {
+-        true: {
+-            cellButton: string;
+-        };
+-        false: {
+-            headerWrapper: string[];
+-            grid: string;
+-            cellButton: string[];
+-            pickerWrapper: string;
+-            pickerItem: string;
+-        };
+-    };
+-    isRTL: {
+-        true: {
+-            nextButton: string;
+-            prevButton: string;
+-        };
+-        false: {};
+-    };
+-}, {
+-    base: string[];
+-    prevButton: string[];
+-    nextButton: string[];
+-    headerWrapper: string[];
+-    header: string;
+-    title: string;
+-    content: string;
+-    gridWrapper: string;
+-    grid: string;
+-    gridHeader: string;
+-    gridHeaderRow: string;
+-    gridHeaderCell: string;
+-    gridBody: string;
+-    gridBodyRow: string;
+-    cell: string;
+-    cellButton: string[];
+-    pickerWrapper: string;
+-    pickerMonthList: string;
+-    pickerYearList: string;
+-    pickerHighlight: string;
+-    pickerItem: string[];
+-    helperWrapper: string;
+-    errorMessage: string;
+-}, undefined, unknown, unknown, undefined>>;
++}, undefined>;
+ type CalendarReturnType = ReturnType<typeof calendar>;
+ type CalendarVariantProps = VariantProps<typeof calendar>;
+ type CalendarSlots = keyof ReturnType<typeof calendar>;
+diff --git a/dist/components/card.d.ts b/dist/components/card.d.ts
+index 9d60f05..0d8a3c8 100644
+--- a/dist/components/card.d.ts
++++ b/dist/components/card.d.ts
+@@ -171,85 +171,7 @@ declare const card: tailwind_variants.TVReturnType<{
+     header: string[];
+     body: string[];
+     footer: string[];
+-}, tailwind_variants.TVReturnType<{
+-    shadow: {
+-        none: {
+-            base: string;
+-        };
+-        sm: {
+-            base: string;
+-        };
+-        md: {
+-            base: string;
+-        };
+-        lg: {
+-            base: string;
+-        };
+-    };
+-    radius: {
+-        none: {
+-            base: string;
+-            header: string;
+-            footer: string;
+-        };
+-        sm: {
+-            base: string;
+-            header: string;
+-            footer: string;
+-        };
+-        md: {
+-            base: string;
+-            header: string;
+-            footer: string;
+-        };
+-        lg: {
+-            base: string;
+-            header: string;
+-            footer: string;
+-        };
+-    };
+-    fullWidth: {
+-        true: {
+-            base: string;
+-        };
+-    };
+-    isHoverable: {
+-        true: {
+-            base: string;
+-        };
+-    };
+-    isPressable: {
+-        true: {
+-            base: string;
+-        };
+-    };
+-    isBlurred: {
+-        true: {
+-            base: string[];
+-        };
+-    };
+-    isFooterBlurred: {
+-        true: {
+-            footer: string[];
+-        };
+-    };
+-    isDisabled: {
+-        true: {
+-            base: string;
+-        };
+-    };
+-    disableAnimation: {
+-        true: string;
+-        false: {
+-            base: string;
+-        };
+-    };
+-}, {
+-    base: string[];
+-    header: string[];
+-    body: string[];
+-    footer: string[];
+-}, undefined, unknown, unknown, undefined>>;
++}, undefined>;
+ type CardVariantProps = VariantProps<typeof card>;
+ type CardSlots = keyof ReturnType<typeof card>;
+ type CardReturnType = ReturnType<typeof card>;
+diff --git a/dist/components/checkbox.d.ts b/dist/components/checkbox.d.ts
+index 5b94c22..74ecd91 100644
+--- a/dist/components/checkbox.d.ts
++++ b/dist/components/checkbox.d.ts
+@@ -195,96 +195,7 @@ declare const checkbox: tailwind_variants.TVReturnType<{
+     hiddenInput: string[];
+     icon: string;
+     label: string;
+-}, tailwind_variants.TVReturnType<{
+-    color: {
+-        default: {
+-            wrapper: string;
+-        };
+-        primary: {
+-            wrapper: string;
+-        };
+-        secondary: {
+-            wrapper: string;
+-        };
+-        success: {
+-            wrapper: string;
+-        };
+-        warning: {
+-            wrapper: string;
+-        };
+-        danger: {
+-            wrapper: string;
+-        };
+-    };
+-    size: {
+-        sm: {
+-            wrapper: string[];
+-            label: string;
+-            icon: string;
+-        };
+-        md: {
+-            wrapper: string[];
+-            label: string;
+-            icon: string;
+-        };
+-        lg: {
+-            wrapper: string[];
+-            label: string;
+-            icon: string;
+-        };
+-    };
+-    radius: {
+-        none: {
+-            wrapper: string;
+-        };
+-        sm: {
+-            wrapper: string[];
+-        };
+-        md: {
+-            wrapper: string[];
+-        };
+-        lg: {
+-            wrapper: string[];
+-        };
+-        full: {
+-            wrapper: string;
+-        };
+-    };
+-    lineThrough: {
+-        true: {
+-            label: string[];
+-        };
+-    };
+-    isDisabled: {
+-        true: {
+-            base: string;
+-        };
+-    };
+-    isInvalid: {
+-        true: {
+-            wrapper: string;
+-            label: string;
+-        };
+-    };
+-    disableAnimation: {
+-        true: {
+-            wrapper: string;
+-            icon: string;
+-            label: string;
+-        };
+-        false: {
+-            wrapper: string[];
+-            icon: string;
+-            label: string;
+-        };
+-    };
+-}, {
+-    base: string;
+-    wrapper: string[];
+-    hiddenInput: string[];
+-    icon: string;
+-    label: string;
+-}, undefined, unknown, unknown, undefined>>;
++}, undefined>;
+ /**
+  * CheckboxGroup wrapper **Tailwind Variants** component
+  *
+@@ -344,30 +255,7 @@ declare const checkboxGroup: tailwind_variants.TVReturnType<{
+     wrapper: string;
+     description: string;
+     errorMessage: string;
+-}, tailwind_variants.TVReturnType<{
+-    isRequired: {
+-        true: {
+-            label: string;
+-        };
+-    };
+-    isInvalid: {
+-        true: {
+-            description: string;
+-        };
+-    };
+-    disableAnimation: {
+-        true: {};
+-        false: {
+-            description: string;
+-        };
+-    };
+-}, {
+-    base: string;
+-    label: string;
+-    wrapper: string;
+-    description: string;
+-    errorMessage: string;
+-}, undefined, unknown, unknown, undefined>>;
++}, undefined>;
+ type CheckboxGroupSlots = keyof ReturnType<typeof checkboxGroup>;
+ type CheckboxVariantProps = VariantProps<typeof checkbox>;
+ type CheckboxSlots = keyof ReturnType<typeof checkbox>;
+diff --git a/dist/components/chip.d.ts b/dist/components/chip.d.ts
+index 2fa82db..d823ccc 100644
+--- a/dist/components/chip.d.ts
++++ b/dist/components/chip.d.ts
+@@ -228,112 +228,7 @@ declare const chip: tailwind_variants.TVReturnType<{
+     dot: string[];
+     avatar: string;
+     closeButton: string[];
+-}, tailwind_variants.TVReturnType<{
+-    variant: {
+-        solid: {};
+-        bordered: {
+-            base: string;
+-        };
+-        light: {
+-            base: string;
+-        };
+-        flat: {};
+-        faded: {
+-            base: string;
+-        };
+-        shadow: {};
+-        dot: {
+-            base: string;
+-        };
+-    };
+-    color: {
+-        default: {
+-            dot: string;
+-        };
+-        primary: {
+-            dot: string;
+-        };
+-        secondary: {
+-            dot: string;
+-        };
+-        success: {
+-            dot: string;
+-        };
+-        warning: {
+-            dot: string;
+-        };
+-        danger: {
+-            dot: string;
+-        };
+-    };
+-    size: {
+-        sm: {
+-            base: string;
+-            content: string;
+-            closeButton: string;
+-            avatar: string;
+-        };
+-        md: {
+-            base: string;
+-            content: string;
+-            closeButton: string;
+-            avatar: string;
+-        };
+-        lg: {
+-            base: string;
+-            content: string;
+-            closeButton: string;
+-            avatar: string;
+-        };
+-    };
+-    radius: {
+-        none: {
+-            base: string;
+-        };
+-        sm: {
+-            base: string;
+-        };
+-        md: {
+-            base: string;
+-        };
+-        lg: {
+-            base: string;
+-        };
+-        full: {
+-            base: string;
+-        };
+-    };
+-    isOneChar: {
+-        true: {};
+-        false: {};
+-    };
+-    isCloseable: {
+-        true: {};
+-        false: {};
+-    };
+-    hasStartContent: {
+-        true: {};
+-    };
+-    hasEndContent: {
+-        true: {};
+-    };
+-    isDisabled: {
+-        true: {
+-            base: string;
+-        };
+-    };
+-    isCloseButtonFocusVisible: {
+-        true: {
+-            closeButton: string[];
+-        };
+-    };
+-}, {
+-    base: string[];
+-    content: string;
+-    dot: string[];
+-    avatar: string;
+-    closeButton: string[];
+-}, undefined, unknown, unknown, undefined>>;
++}, undefined>;
+ type ChipVariantProps = VariantProps<typeof chip>;
+ type ChipSlots = keyof ReturnType<typeof chip>;
+ 
+diff --git a/dist/components/code.d.ts b/dist/components/code.d.ts
+index 7333093..3512b45 100644
+--- a/dist/components/code.d.ts
++++ b/dist/components/code.d.ts
+@@ -53,28 +53,7 @@ declare const code: tailwind_variants.TVReturnType<{
+         lg: string;
+         full: string;
+     };
+-}, undefined, tailwind_variants.TVReturnType<{
+-    color: {
+-        default: string;
+-        primary: string;
+-        secondary: string;
+-        success: string;
+-        warning: string;
+-        danger: string;
+-    };
+-    size: {
+-        sm: string;
+-        md: string;
+-        lg: string;
+-    };
+-    radius: {
+-        none: string;
+-        sm: string;
+-        md: string;
+-        lg: string;
+-        full: string;
+-    };
+-}, undefined, string[], unknown, unknown, undefined>>;
++}, undefined, undefined>;
+ type CodeVariantProps = VariantProps<typeof code>;
+ 
+ export { type CodeVariantProps, code };
+diff --git a/dist/components/date-input.d.ts b/dist/components/date-input.d.ts
+index 9147a68..5c09774 100644
+--- a/dist/components/date-input.d.ts
++++ b/dist/components/date-input.d.ts
+@@ -258,133 +258,7 @@ declare const dateInput: tailwind_variants.TVReturnType<{
+     helperWrapper: string;
+     description: string;
+     errorMessage: string;
+-}, tailwind_variants.TVReturnType<{
+-    variant: {
+-        flat: {
+-            inputWrapper: string[];
+-        };
+-        faded: {
+-            inputWrapper: string[];
+-        };
+-        bordered: {
+-            inputWrapper: string[];
+-        };
+-        underlined: {
+-            inputWrapper: string[];
+-        };
+-    };
+-    color: {
+-        default: {
+-            segment: string;
+-        };
+-        primary: {
+-            segment: string;
+-        };
+-        secondary: {
+-            segment: string;
+-        };
+-        success: {
+-            segment: string;
+-        };
+-        warning: {
+-            segment: string;
+-        };
+-        danger: {
+-            segment: string;
+-        };
+-    };
+-    size: {
+-        sm: {
+-            label: string;
+-            input: string;
+-            inputWrapper: string;
+-        };
+-        md: {
+-            input: string;
+-            inputWrapper: string;
+-            clearButton: string;
+-        };
+-        lg: {
+-            label: string;
+-            input: string;
+-            inputWrapper: string;
+-        };
+-    };
+-    radius: {
+-        none: {
+-            inputWrapper: string;
+-        };
+-        sm: {
+-            inputWrapper: string;
+-        };
+-        md: {
+-            inputWrapper: string;
+-        };
+-        lg: {
+-            inputWrapper: string;
+-        };
+-        full: {
+-            inputWrapper: string;
+-        };
+-    };
+-    labelPlacement: {
+-        outside: {
+-            base: string;
+-            label: string;
+-            helperWrapper: string;
+-        };
+-        "outside-left": {
+-            base: string;
+-            label: string;
+-            inputWrapper: string;
+-            helperWrapper: string;
+-        };
+-        "outside-top": {
+-            base: string;
+-            label: string;
+-            helperWrapper: string;
+-        };
+-        inside: {
+-            label: string;
+-            inputWrapper: string;
+-        };
+-    };
+-    fullWidth: {
+-        true: {
+-            base: string;
+-            inputWrapper: string;
+-        };
+-    };
+-    isDisabled: {
+-        true: {
+-            base: string;
+-            inputWrapper: string;
+-            label: string;
+-        };
+-    };
+-    disableAnimation: {
+-        true: {
+-            label: string;
+-            input: string;
+-            inputWrapper: string;
+-        };
+-        false: {
+-            label: string[];
+-            inputWrapper: string;
+-            segment: string;
+-        };
+-    };
+-}, {
+-    base: string;
+-    label: string[];
+-    inputWrapper: string[];
+-    input: string;
+-    innerWrapper: string[];
+-    segment: string[];
+-    helperWrapper: string;
+-    description: string;
+-    errorMessage: string;
+-}, undefined, unknown, unknown, undefined>>;
++}, undefined>;
+ type DateInputReturnType = ReturnType<typeof dateInput>;
+ type DateInputVariantProps = VariantProps<typeof dateInput>;
+ type DateInputSlots = keyof ReturnType<typeof dateInput>;
+diff --git a/dist/components/date-picker.d.ts b/dist/components/date-picker.d.ts
+index b7a9957..7ce3e28 100644
+--- a/dist/components/date-picker.d.ts
++++ b/dist/components/date-picker.d.ts
+@@ -64,16 +64,7 @@ declare const datePicker: tailwind_variants.TVReturnType<{
+     calendarContent: string;
+     timeInputLabel: string;
+     timeInput: string;
+-}, tailwind_variants.TVReturnType<unknown, {
+-    base: string;
+-    selectorButton: string;
+-    selectorIcon: string;
+-    popoverContent: string;
+-    calendar: string;
+-    calendarContent: string;
+-    timeInputLabel: string;
+-    timeInput: string;
+-}, undefined, unknown, unknown, undefined>>;
++}, undefined>;
+ declare const dateRangePicker: tailwind_variants.TVReturnType<{
+     [key: string]: {
+         [key: string]: tailwind_merge.ClassNameValue | {
+@@ -198,16 +189,7 @@ declare const dateRangePicker: tailwind_variants.TVReturnType<{
+     calendarContent: string;
+     timeInputLabel: string;
+     timeInput: string;
+-}, tailwind_variants.TVReturnType<unknown, {
+-    base: string;
+-    selectorButton: string;
+-    selectorIcon: string;
+-    popoverContent: string;
+-    calendar: string;
+-    calendarContent: string;
+-    timeInputLabel: string;
+-    timeInput: string;
+-}, undefined, unknown, unknown, undefined>>>;
++}, undefined>>;
+ /** Base */
+ type DatePickerReturnType = ReturnType<typeof datePicker>;
+ type DatePickerVariantProps = VariantProps<typeof datePicker>;
+diff --git a/dist/components/divider.d.ts b/dist/components/divider.d.ts
+index d6146a4..267b56e 100644
+--- a/dist/components/divider.d.ts
++++ b/dist/components/divider.d.ts
+@@ -20,12 +20,7 @@ declare const divider: tailwind_variants.TVReturnType<{
+         horizontal: string;
+         vertical: string;
+     };
+-}, undefined, tailwind_variants.TVReturnType<{
+-    orientation: {
+-        horizontal: string;
+-        vertical: string;
+-    };
+-}, undefined, "shrink-0 bg-divider border-none", unknown, unknown, undefined>>;
++}, undefined, undefined>;
+ type DividerVariantProps = VariantProps<typeof divider>;
+ 
+ export { type DividerVariantProps, divider };
+diff --git a/dist/components/drawer.d.ts b/dist/components/drawer.d.ts
+index a5ad427..2e4ae1e 100644
+--- a/dist/components/drawer.d.ts
++++ b/dist/components/drawer.d.ts
+@@ -114,56 +114,7 @@ declare const drawer: tailwind_variants.TVReturnType<{
+     };
+ }, {
+     base: string[];
+-}, tailwind_variants.TVReturnType<{
+-    size: {
+-        xs: {
+-            base: string;
+-        };
+-        sm: {
+-            base: string;
+-        };
+-        md: {
+-            base: string;
+-        };
+-        lg: {
+-            base: string;
+-        };
+-        xl: {
+-            base: string;
+-        };
+-        "2xl": {
+-            base: string;
+-        };
+-        "3xl": {
+-            base: string;
+-        };
+-        "4xl": {
+-            base: string;
+-        };
+-        "5xl": {
+-            base: string;
+-        };
+-        full: {
+-            base: string;
+-        };
+-    };
+-    placement: {
+-        top: {
+-            base: string;
+-        };
+-        right: {
+-            base: string;
+-        };
+-        bottom: {
+-            base: string;
+-        };
+-        left: {
+-            base: string;
+-        };
+-    };
+-}, {
+-    base: string[];
+-}, undefined, unknown, unknown, undefined>>;
++}, undefined>;
+ type DrawerVariants = VariantProps<typeof drawer>;
+ 
+ export { type DrawerVariants, drawer };
+diff --git a/dist/components/drip.d.ts b/dist/components/drip.d.ts
+index 093ae09..33769a2 100644
+--- a/dist/components/drip.d.ts
++++ b/dist/components/drip.d.ts
+@@ -8,6 +8,6 @@ import * as tailwind_variants from 'tailwind-variants';
+  * @example
+  * <span ref={dripRef} className={classNames())} />
+  */
+-declare const drip: tailwind_variants.TVReturnType<{} | {} | {}, undefined, string[], {} | {}, undefined, tailwind_variants.TVReturnType<unknown, undefined, string[], unknown, unknown, undefined>>;
++declare const drip: tailwind_variants.TVReturnType<{} | {} | {}, undefined, string[], {} | {}, undefined, undefined>;
+ 
+ export { drip };
+diff --git a/dist/components/dropdown.d.ts b/dist/components/dropdown.d.ts
+index c1220de..e97da43 100644
+--- a/dist/components/dropdown.d.ts
++++ b/dist/components/dropdown.d.ts
+@@ -16,7 +16,7 @@ import { VariantProps } from 'tailwind-variants';
+  *  </div>
+  * </div>
+  */
+-declare const dropdown: tailwind_variants.TVReturnType<{} | {} | {}, undefined, string[], {} | {}, undefined, tailwind_variants.TVReturnType<unknown, undefined, string[], unknown, unknown, undefined>>;
++declare const dropdown: tailwind_variants.TVReturnType<{} | {} | {}, undefined, string[], {} | {}, undefined, undefined>;
+ /**
+  * DropdownItem wrapper **Tailwind Variants** component
+  *
+@@ -129,52 +129,7 @@ declare const dropdownItem: tailwind_variants.TVReturnType<{
+     description: string[];
+     selectedIcon: string[];
+     shortcut: string[];
+-}, tailwind_variants.TVReturnType<{
+-    variant: {
+-        solid: {
+-            base: string;
+-        };
+-        bordered: {
+-            base: string;
+-        };
+-        light: {
+-            base: string;
+-        };
+-        faded: {
+-            base: string;
+-        };
+-        flat: {
+-            base: string;
+-        };
+-        shadow: {
+-            base: string;
+-        };
+-    };
+-    color: {
+-        default: {};
+-        primary: {};
+-        secondary: {};
+-        success: {};
+-        warning: {};
+-        danger: {};
+-    };
+-    isDisabled: {
+-        true: {
+-            base: string;
+-        };
+-    };
+-    disableAnimation: {
+-        true: {};
+-        false: {};
+-    };
+-}, {
+-    base: string[];
+-    wrapper: string;
+-    title: string;
+-    description: string[];
+-    selectedIcon: string[];
+-    shortcut: string[];
+-}, undefined, unknown, unknown, undefined>>;
++}, undefined>;
+ /**
+  * Dropdown wrapper **Tailwind Variants** component
+  *
+@@ -226,19 +181,14 @@ declare const dropdownSection: tailwind_variants.TVReturnType<{
+     heading: string;
+     group: string;
+     divider: string;
+-}, tailwind_variants.TVReturnType<unknown, {
+-    base: string;
+-    heading: string;
+-    group: string;
+-    divider: string;
+-}, undefined, unknown, unknown, undefined>>;
++}, undefined>;
+ /**
+  * Dropdown Menu wrapper **Tailwind Variants** component
+  *
+  * const classNames = dropdownMenu({...})
+ 
+  */
+-declare const dropdownMenu: tailwind_variants.TVReturnType<{} | {} | {}, undefined, "w-full flex flex-col gap-0.5 p-1", {} | {}, undefined, tailwind_variants.TVReturnType<unknown, undefined, "w-full flex flex-col gap-0.5 p-1", unknown, unknown, undefined>>;
++declare const dropdownMenu: tailwind_variants.TVReturnType<{} | {} | {}, undefined, "w-full flex flex-col gap-0.5 p-1", {} | {}, undefined, undefined>;
+ type DropdownSectionVariantProps = VariantProps<typeof dropdownSection>;
+ type DropdownSectionSlots = keyof ReturnType<typeof dropdownSection>;
+ type DropdownItemVariantProps = VariantProps<typeof dropdownItem>;
+diff --git a/dist/components/form.d.ts b/dist/components/form.d.ts
+index f03a9de..ce10cd8 100644
+--- a/dist/components/form.d.ts
++++ b/dist/components/form.d.ts
+@@ -13,7 +13,7 @@ import { VariantProps } from 'tailwind-variants';
+  * </form>
+  * ```
+  */
+-declare const form: tailwind_variants.TVReturnType<{} | {} | {}, undefined, "flex flex-col gap-2 items-start", {} | {}, undefined, tailwind_variants.TVReturnType<unknown, undefined, "flex flex-col gap-2 items-start", unknown, unknown, undefined>>;
++declare const form: tailwind_variants.TVReturnType<{} | {} | {}, undefined, "flex flex-col gap-2 items-start", {} | {}, undefined, undefined>;
+ type FormVariantProps = VariantProps<typeof form>;
+ 
+ export { type FormVariantProps, form };
+diff --git a/dist/components/image.d.ts b/dist/components/image.d.ts
+index 9e17522..981c5e6 100644
+--- a/dist/components/image.d.ts
++++ b/dist/components/image.d.ts
+@@ -117,57 +117,7 @@ declare const image: tailwind_variants.TVReturnType<{
+     zoomedWrapper: string;
+     img: string;
+     blurredImg: string[];
+-}, tailwind_variants.TVReturnType<{
+-    radius: {
+-        none: {};
+-        sm: {};
+-        md: {};
+-        lg: {};
+-        full: {};
+-    };
+-    shadow: {
+-        none: {
+-            wrapper: string;
+-            img: string;
+-        };
+-        sm: {
+-            wrapper: string;
+-            img: string;
+-        };
+-        md: {
+-            wrapper: string;
+-            img: string;
+-        };
+-        lg: {
+-            wrapper: string;
+-            img: string;
+-        };
+-    };
+-    isZoomed: {
+-        true: {
+-            img: string[];
+-        };
+-    };
+-    showSkeleton: {
+-        true: {
+-            wrapper: string[];
+-            img: string;
+-        };
+-    };
+-    disableAnimation: {
+-        true: {
+-            img: string;
+-        };
+-        false: {
+-            img: string;
+-        };
+-    };
+-}, {
+-    wrapper: string;
+-    zoomedWrapper: string;
+-    img: string;
+-    blurredImg: string[];
+-}, undefined, unknown, unknown, undefined>>;
++}, undefined>;
+ type ImageVariantProps = VariantProps<typeof image>;
+ type ImageSlots = keyof ReturnType<typeof image>;
+ 
+diff --git a/dist/components/input-otp.d.ts b/dist/components/input-otp.d.ts
+index 41dba4d..dd861dc 100644
+--- a/dist/components/input-otp.d.ts
++++ b/dist/components/input-otp.d.ts
+@@ -183,98 +183,7 @@ declare const inputOtp: tailwind_variants.TVReturnType<{
+     helperWrapper: string[];
+     errorMessage: string[];
+     description: string[];
+-}, tailwind_variants.TVReturnType<{
+-    variant: {
+-        flat: {
+-            segment: string[];
+-        };
+-        faded: {
+-            segment: string[];
+-        };
+-        bordered: {
+-            segment: string[];
+-        };
+-        underlined: {
+-            segment: string[];
+-        };
+-    };
+-    isDisabled: {
+-        true: {
+-            segment: string;
+-            input: string;
+-        };
+-    };
+-    isInvalid: {
+-        true: {};
+-    };
+-    isReadOnly: {
+-        true: {
+-            caret: string;
+-            segment: string;
+-        };
+-    };
+-    fullWidth: {
+-        true: {
+-            base: string;
+-        };
+-    };
+-    radius: {
+-        none: {
+-            segment: string;
+-        };
+-        sm: {
+-            segment: string;
+-        };
+-        md: {
+-            segment: string;
+-        };
+-        lg: {
+-            segment: string;
+-        };
+-        full: {
+-            segment: string;
+-        };
+-    };
+-    color: {
+-        default: {};
+-        primary: {};
+-        secondary: {};
+-        success: {};
+-        warning: {};
+-        danger: {};
+-    };
+-    size: {
+-        sm: {
+-            segment: string;
+-        };
+-        md: {
+-            segment: string;
+-        };
+-        lg: {
+-            segment: string;
+-        };
+-    };
+-    disableAnimation: {
+-        true: {
+-            segment: string;
+-            caret: string;
+-        };
+-        false: {
+-            segment: string;
+-        };
+-    };
+-}, {
+-    base: string[];
+-    wrapper: string[];
+-    input: string[];
+-    segmentWrapper: string[];
+-    segment: string[];
+-    passwordChar: string[];
+-    caret: string[];
+-    helperWrapper: string[];
+-    errorMessage: string[];
+-    description: string[];
+-}, undefined, unknown, unknown, undefined>>;
++}, undefined>;
+ type InputOtpVariantProps = VariantProps<typeof inputOtp>;
+ type InputOtpSlots = keyof ReturnType<typeof inputOtp>;
+ type InputOtpReturnType = ReturnType<typeof inputOtp>;
+diff --git a/dist/components/input.d.ts b/dist/components/input.d.ts
+index 77e100e..742eff6 100644
+--- a/dist/components/input.d.ts
++++ b/dist/components/input.d.ts
+@@ -307,151 +307,7 @@ declare const input: tailwind_variants.TVReturnType<{
+     helperWrapper: string;
+     description: string;
+     errorMessage: string;
+-}, tailwind_variants.TVReturnType<{
+-    variant: {
+-        flat: {
+-            inputWrapper: string[];
+-        };
+-        faded: {
+-            inputWrapper: string[];
+-            value: string;
+-        };
+-        bordered: {
+-            inputWrapper: string[];
+-        };
+-        underlined: {
+-            inputWrapper: string[];
+-            innerWrapper: string;
+-            label: string;
+-        };
+-    };
+-    color: {
+-        default: {};
+-        primary: {};
+-        secondary: {};
+-        success: {};
+-        warning: {};
+-        danger: {};
+-    };
+-    size: {
+-        sm: {
+-            label: string;
+-            inputWrapper: string;
+-            input: string;
+-            clearButton: string;
+-        };
+-        md: {
+-            inputWrapper: string;
+-            input: string;
+-            clearButton: string;
+-        };
+-        lg: {
+-            label: string;
+-            inputWrapper: string;
+-            input: string;
+-            clearButton: string;
+-        };
+-    };
+-    radius: {
+-        none: {
+-            inputWrapper: string;
+-        };
+-        sm: {
+-            inputWrapper: string;
+-        };
+-        md: {
+-            inputWrapper: string;
+-        };
+-        lg: {
+-            inputWrapper: string;
+-        };
+-        full: {
+-            inputWrapper: string;
+-        };
+-    };
+-    labelPlacement: {
+-        outside: {
+-            mainWrapper: string;
+-        };
+-        "outside-left": {
+-            base: string;
+-            inputWrapper: string;
+-            mainWrapper: string;
+-            label: string;
+-        };
+-        "outside-top": {
+-            mainWrapper: string;
+-            label: string;
+-        };
+-        inside: {
+-            label: string;
+-            inputWrapper: string;
+-            innerWrapper: string;
+-        };
+-    };
+-    fullWidth: {
+-        true: {
+-            base: string;
+-        };
+-        false: {};
+-    };
+-    isClearable: {
+-        true: {
+-            input: string;
+-            clearButton: string[];
+-        };
+-    };
+-    isDisabled: {
+-        true: {
+-            base: string;
+-            inputWrapper: string;
+-            label: string;
+-        };
+-    };
+-    isInvalid: {
+-        true: {
+-            label: string;
+-            input: string;
+-        };
+-    };
+-    isRequired: {
+-        true: {
+-            label: string;
+-        };
+-    };
+-    isMultiline: {
+-        true: {
+-            label: string;
+-            inputWrapper: string;
+-            innerWrapper: string;
+-            input: string;
+-            clearButton: string;
+-        };
+-    };
+-    disableAnimation: {
+-        true: {
+-            input: string;
+-            inputWrapper: string;
+-            label: string;
+-        };
+-        false: {
+-            inputWrapper: string;
+-            label: string[];
+-            clearButton: string[];
+-        };
+-    };
+-}, {
+-    base: string;
+-    label: string[];
+-    mainWrapper: string;
+-    inputWrapper: string;
+-    innerWrapper: string;
+-    input: string[];
+-    clearButton: string[];
+-    helperWrapper: string;
+-    description: string;
+-    errorMessage: string;
+-}, undefined, unknown, unknown, undefined>>;
++}, undefined>;
+ type InputVariantProps = VariantProps<typeof input>;
+ type InputSlots = keyof ReturnType<typeof input>;
+ 
+diff --git a/dist/components/kbd.d.ts b/dist/components/kbd.d.ts
+index 2758184..b779107 100644
+--- a/dist/components/kbd.d.ts
++++ b/dist/components/kbd.d.ts
+@@ -39,11 +39,7 @@ declare const kbd: tailwind_variants.TVReturnType<{}, {
+     base: string[];
+     abbr: string;
+     content: string;
+-}, tailwind_variants.TVReturnType<{}, {
+-    base: string[];
+-    abbr: string;
+-    content: string;
+-}, undefined, unknown, unknown, undefined>>;
++}, undefined>;
+ type KbdVariantProps = VariantProps<typeof kbd>;
+ type KbdSlots = keyof ReturnType<typeof kbd>;
+ 
+diff --git a/dist/components/link.d.ts b/dist/components/link.d.ts
+index 27aa587..1bfd406 100644
+--- a/dist/components/link.d.ts
++++ b/dist/components/link.d.ts
+@@ -69,38 +69,7 @@ declare const link: tailwind_variants.TVReturnType<{
+     disableAnimation: {
+         true: string;
+     };
+-}, undefined, tailwind_variants.TVReturnType<{
+-    size: {
+-        sm: string;
+-        md: string;
+-        lg: string;
+-    };
+-    color: {
+-        foreground: string;
+-        primary: string;
+-        secondary: string;
+-        success: string;
+-        warning: string;
+-        danger: string;
+-    };
+-    underline: {
+-        none: string;
+-        hover: string;
+-        always: string;
+-        active: string;
+-        focus: string;
+-    };
+-    isBlock: {
+-        true: string[];
+-        false: string;
+-    };
+-    isDisabled: {
+-        true: string;
+-    };
+-    disableAnimation: {
+-        true: string;
+-    };
+-}, undefined, string[], unknown, unknown, undefined>>;
++}, undefined, undefined>;
+ declare const linkAnchorClasses = "flex mx-1 text-current self-center";
+ type LinkVariantProps = VariantProps<typeof link>;
+ 
+diff --git a/dist/components/menu.d.ts b/dist/components/menu.d.ts
+index 9af0f24..51c14ff 100644
+--- a/dist/components/menu.d.ts
++++ b/dist/components/menu.d.ts
+@@ -40,11 +40,7 @@ declare const menu: tailwind_variants.TVReturnType<{
+     base: string;
+     list: string;
+     emptyContent: string[];
+-}, tailwind_variants.TVReturnType<unknown, {
+-    base: string;
+-    list: string;
+-    emptyContent: string[];
+-}, undefined, unknown, unknown, undefined>>;
++}, undefined>;
+ /**
+  * MenuItem wrapper **Tailwind Variants** component
+  *
+@@ -193,70 +189,7 @@ declare const menuItem: tailwind_variants.TVReturnType<{
+     description: string[];
+     selectedIcon: string[];
+     shortcut: string[];
+-}, tailwind_variants.TVReturnType<{
+-    variant: {
+-        solid: {
+-            base: string;
+-        };
+-        bordered: {
+-            base: string;
+-        };
+-        light: {
+-            base: string;
+-        };
+-        faded: {
+-            base: string[];
+-        };
+-        flat: {
+-            base: string;
+-        };
+-        shadow: {
+-            base: string;
+-        };
+-    };
+-    color: {
+-        default: {};
+-        primary: {};
+-        secondary: {};
+-        success: {};
+-        warning: {};
+-        danger: {};
+-    };
+-    showDivider: {
+-        true: {
+-            base: string[];
+-        };
+-        false: {};
+-    };
+-    isDisabled: {
+-        true: {
+-            base: string;
+-        };
+-    };
+-    disableAnimation: {
+-        true: {};
+-        false: {
+-            base: string;
+-        };
+-    };
+-    hasTitleTextChild: {
+-        true: {
+-            title: string;
+-        };
+-    };
+-    hasDescriptionTextChild: {
+-        true: {
+-            description: string;
+-        };
+-    };
+-}, {
+-    base: string[];
+-    wrapper: string;
+-    title: string;
+-    description: string[];
+-    selectedIcon: string[];
+-    shortcut: string[];
+-}, undefined, unknown, unknown, undefined>>;
++}, undefined>;
+ /**
+  * Menu section wrapper **Tailwind Variants** component
+  *
+@@ -308,12 +241,7 @@ declare const menuSection: tailwind_variants.TVReturnType<{
+     heading: string;
+     group: string;
+     divider: string;
+-}, tailwind_variants.TVReturnType<unknown, {
+-    base: string;
+-    heading: string;
+-    group: string;
+-    divider: string;
+-}, undefined, unknown, unknown, undefined>>;
++}, undefined>;
+ type MenuVariantProps = VariantProps<typeof menu>;
+ type MenuSlots = keyof ReturnType<typeof menu>;
+ type MenuSectionVariantProps = VariantProps<typeof menuSection>;
+diff --git a/dist/components/modal.d.ts b/dist/components/modal.d.ts
+index 01c0898..4892b25 100644
+--- a/dist/components/modal.d.ts
++++ b/dist/components/modal.d.ts
+@@ -255,125 +255,7 @@ declare const modal: tailwind_variants.TVReturnType<{
+     body: string;
+     footer: string;
+     closeButton: string[];
+-}, tailwind_variants.TVReturnType<{
+-    size: {
+-        xs: {
+-            base: string;
+-        };
+-        sm: {
+-            base: string;
+-        };
+-        md: {
+-            base: string;
+-        };
+-        lg: {
+-            base: string;
+-        };
+-        xl: {
+-            base: string;
+-        };
+-        "2xl": {
+-            base: string;
+-        };
+-        "3xl": {
+-            base: string;
+-        };
+-        "4xl": {
+-            base: string;
+-        };
+-        "5xl": {
+-            base: string;
+-        };
+-        full: {
+-            base: string;
+-        };
+-    };
+-    radius: {
+-        none: {
+-            base: string;
+-        };
+-        sm: {
+-            base: string;
+-        };
+-        md: {
+-            base: string;
+-        };
+-        lg: {
+-            base: string;
+-        };
+-    };
+-    placement: {
+-        auto: {
+-            wrapper: string;
+-        };
+-        center: {
+-            wrapper: string;
+-        };
+-        top: {
+-            wrapper: string;
+-        };
+-        "top-center": {
+-            wrapper: string;
+-        };
+-        bottom: {
+-            wrapper: string;
+-        };
+-        "bottom-center": {
+-            wrapper: string;
+-        };
+-    };
+-    shadow: {
+-        none: {
+-            base: string;
+-        };
+-        sm: {
+-            base: string;
+-        };
+-        md: {
+-            base: string;
+-        };
+-        lg: {
+-            base: string;
+-        };
+-    };
+-    backdrop: {
+-        transparent: {
+-            backdrop: string;
+-        };
+-        opaque: {
+-            backdrop: string;
+-        };
+-        blur: {
+-            backdrop: string;
+-        };
+-    };
+-    scrollBehavior: {
+-        normal: {
+-            base: string;
+-        };
+-        inside: {
+-            base: string;
+-            body: string;
+-        };
+-        outside: {
+-            wrapper: string;
+-            base: string;
+-        };
+-    };
+-    disableAnimation: {
+-        false: {
+-            wrapper: string[];
+-        };
+-    };
+-}, {
+-    wrapper: string[];
+-    base: string[];
+-    backdrop: string;
+-    header: string;
+-    body: string;
+-    footer: string;
+-    closeButton: string[];
+-}, undefined, unknown, unknown, undefined>>;
++}, undefined>;
+ type ModalVariantProps = VariantProps<typeof modal>;
+ type ModalSlots = keyof ReturnType<typeof modal>;
+ 
+diff --git a/dist/components/navbar.d.ts b/dist/components/navbar.d.ts
+index bf30833..9759d95 100644
+--- a/dist/components/navbar.d.ts
++++ b/dist/components/navbar.d.ts
+@@ -174,72 +174,7 @@ declare const navbar: tailwind_variants.TVReturnType<{
+     item: string[];
+     menu: string[];
+     menuItem: string[];
+-}, tailwind_variants.TVReturnType<{
+-    position: {
+-        static: {
+-            base: string;
+-        };
+-        sticky: {
+-            base: string;
+-        };
+-    };
+-    maxWidth: {
+-        sm: {
+-            wrapper: string;
+-        };
+-        md: {
+-            wrapper: string;
+-        };
+-        lg: {
+-            wrapper: string;
+-        };
+-        xl: {
+-            wrapper: string;
+-        };
+-        "2xl": {
+-            wrapper: string;
+-        };
+-        full: {
+-            wrapper: string;
+-        };
+-    };
+-    hideOnScroll: {
+-        true: {
+-            base: string[];
+-        };
+-    };
+-    isBordered: {
+-        true: {
+-            base: string[];
+-        };
+-    };
+-    isBlurred: {
+-        false: {
+-            base: string;
+-            menu: string;
+-        };
+-        true: {
+-            base: string[];
+-            menu: string[];
+-        };
+-    };
+-    disableAnimation: {
+-        true: {
+-            menu: string[];
+-        };
+-    };
+-}, {
+-    base: string[];
+-    wrapper: string[];
+-    toggle: string[];
+-    srOnly: string[];
+-    toggleIcon: string[];
+-    brand: string[];
+-    content: string[];
+-    item: string[];
+-    menu: string[];
+-    menuItem: string[];
+-}, undefined, unknown, unknown, undefined>>;
++}, undefined>;
+ type NavbarVariantProps = VariantProps<typeof navbar>;
+ type NavbarSlots = keyof ReturnType<typeof navbar>;
+ 
+diff --git a/dist/components/number-input.d.ts b/dist/components/number-input.d.ts
+index 9f664af..a69e28e 100644
+--- a/dist/components/number-input.d.ts
++++ b/dist/components/number-input.d.ts
+@@ -319,157 +319,7 @@ declare const numberInput: tailwind_variants.TVReturnType<{
+     helperWrapper: string;
+     description: string;
+     errorMessage: string;
+-}, tailwind_variants.TVReturnType<{
+-    variant: {
+-        flat: {
+-            inputWrapper: string[];
+-        };
+-        faded: {
+-            inputWrapper: string[];
+-            value: string;
+-        };
+-        bordered: {
+-            inputWrapper: string[];
+-        };
+-        underlined: {
+-            inputWrapper: string[];
+-            innerWrapper: string;
+-            label: string;
+-        };
+-    };
+-    color: {
+-        default: {};
+-        primary: {
+-            stepperButton: string;
+-        };
+-        secondary: {
+-            stepperButton: string;
+-        };
+-        success: {
+-            stepperButton: string;
+-        };
+-        warning: {
+-            stepperButton: string;
+-        };
+-        danger: {
+-            stepperButton: string;
+-        };
+-    };
+-    size: {
+-        sm: {
+-            label: string;
+-            inputWrapper: string;
+-            input: string;
+-            clearButton: string;
+-        };
+-        md: {
+-            inputWrapper: string;
+-            input: string;
+-            clearButton: string;
+-        };
+-        lg: {
+-            label: string;
+-            inputWrapper: string;
+-            input: string;
+-            clearButton: string;
+-        };
+-    };
+-    radius: {
+-        none: {
+-            inputWrapper: string;
+-        };
+-        sm: {
+-            inputWrapper: string;
+-        };
+-        md: {
+-            inputWrapper: string;
+-        };
+-        lg: {
+-            inputWrapper: string;
+-        };
+-        full: {
+-            inputWrapper: string;
+-        };
+-    };
+-    labelPlacement: {
+-        outside: {
+-            mainWrapper: string;
+-            stepperButton: string;
+-        };
+-        "outside-left": {
+-            base: string;
+-            inputWrapper: string;
+-            mainWrapper: string;
+-            label: string;
+-            stepperButton: string;
+-        };
+-        "outside-top": {
+-            mainWrapper: string;
+-            label: string;
+-            stepperButton: string;
+-        };
+-        inside: {
+-            label: string;
+-            inputWrapper: string;
+-            innerWrapper: string;
+-        };
+-    };
+-    fullWidth: {
+-        true: {
+-            base: string;
+-        };
+-        false: {};
+-    };
+-    isClearable: {
+-        true: {
+-            input: string;
+-            clearButton: string[];
+-        };
+-    };
+-    isDisabled: {
+-        true: {
+-            base: string;
+-            inputWrapper: string;
+-            label: string;
+-        };
+-    };
+-    isInvalid: {
+-        true: {
+-            label: string;
+-            input: string;
+-        };
+-    };
+-    isRequired: {
+-        true: {
+-            label: string;
+-        };
+-    };
+-    disableAnimation: {
+-        true: {
+-            input: string;
+-            inputWrapper: string;
+-            label: string;
+-        };
+-        false: {
+-            inputWrapper: string;
+-            label: string[];
+-            clearButton: string[];
+-        };
+-    };
+-}, {
+-    base: string;
+-    label: string[];
+-    mainWrapper: string;
+-    inputWrapper: string;
+-    innerWrapper: string;
+-    input: string[];
+-    clearButton: string[];
+-    stepperButton: string[];
+-    stepperWrapper: string[];
+-    helperWrapper: string;
+-    description: string;
+-    errorMessage: string;
+-}, undefined, unknown, unknown, undefined>>;
++}, undefined>;
+ type NumberInputVariantProps = VariantProps<typeof numberInput>;
+ type NumberInputSlots = keyof ReturnType<typeof numberInput>;
+ 
+diff --git a/dist/components/pagination.d.ts b/dist/components/pagination.d.ts
+index 26c5f33..bf607cd 100644
+--- a/dist/components/pagination.d.ts
++++ b/dist/components/pagination.d.ts
+@@ -189,93 +189,7 @@ declare const pagination: tailwind_variants.TVReturnType<{
+     forwardIcon: string[];
+     ellipsis: string;
+     chevronNext: string;
+-}, tailwind_variants.TVReturnType<{
+-    variant: {
+-        bordered: {
+-            item: string[];
+-        };
+-        light: {
+-            item: string;
+-        };
+-        flat: {};
+-        faded: {
+-            item: string[];
+-        };
+-    };
+-    color: {
+-        default: {
+-            cursor: string;
+-        };
+-        primary: {
+-            cursor: string;
+-        };
+-        secondary: {
+-            cursor: string;
+-        };
+-        success: {
+-            cursor: string;
+-        };
+-        warning: {
+-            cursor: string;
+-        };
+-        danger: {
+-            cursor: string;
+-        };
+-    };
+-    size: {
+-        sm: {};
+-        md: {};
+-        lg: {};
+-    };
+-    radius: {
+-        none: {};
+-        sm: {};
+-        md: {};
+-        lg: {};
+-        full: {};
+-    };
+-    isCompact: {
+-        true: {
+-            wrapper: string;
+-            item: string[];
+-            prev: string;
+-            next: string;
+-        };
+-    };
+-    isDisabled: {
+-        true: {
+-            base: string;
+-        };
+-    };
+-    showShadow: {
+-        true: {};
+-    };
+-    disableCursorAnimation: {
+-        true: {
+-            cursor: string;
+-        };
+-    };
+-    disableAnimation: {
+-        true: {
+-            item: string;
+-            cursor: string;
+-        };
+-        false: {
+-            item: string[];
+-            cursor: string[];
+-        };
+-    };
+-}, {
+-    base: string[];
+-    wrapper: string[];
+-    item: string[];
+-    prev: string;
+-    next: string;
+-    cursor: string[];
+-    forwardIcon: string[];
+-    ellipsis: string;
+-    chevronNext: string;
+-}, undefined, unknown, unknown, undefined>>;
++}, undefined>;
+ type PaginationVariantProps = VariantProps<typeof pagination>;
+ type PaginationSlots = keyof ReturnType<typeof pagination>;
+ 
+diff --git a/dist/components/popover.d.ts b/dist/components/popover.d.ts
+index cdcaf56..09b9986 100644
+--- a/dist/components/popover.d.ts
++++ b/dist/components/popover.d.ts
+@@ -227,112 +227,7 @@ declare const popover: tailwind_variants.TVReturnType<{
+     trigger: string[];
+     backdrop: string[];
+     arrow: never[];
+-}, tailwind_variants.TVReturnType<{
+-    size: {
+-        sm: {
+-            content: string;
+-        };
+-        md: {
+-            content: string;
+-        };
+-        lg: {
+-            content: string;
+-        };
+-    };
+-    color: {
+-        default: {
+-            base: string;
+-            content: string;
+-        };
+-        foreground: {
+-            base: string;
+-            content: string;
+-        };
+-        primary: {
+-            base: string;
+-            content: string;
+-        };
+-        secondary: {
+-            base: string;
+-            content: string;
+-        };
+-        success: {
+-            base: string;
+-            content: string;
+-        };
+-        warning: {
+-            base: string;
+-            content: string;
+-        };
+-        danger: {
+-            base: string;
+-            content: string;
+-        };
+-    };
+-    radius: {
+-        none: {
+-            content: string;
+-        };
+-        sm: {
+-            content: string;
+-        };
+-        md: {
+-            content: string;
+-        };
+-        lg: {
+-            content: string;
+-        };
+-        full: {
+-            content: string;
+-        };
+-    };
+-    shadow: {
+-        none: {
+-            content: string;
+-        };
+-        sm: {
+-            content: string;
+-        };
+-        md: {
+-            content: string;
+-        };
+-        lg: {
+-            content: string;
+-        };
+-    };
+-    backdrop: {
+-        transparent: {};
+-        opaque: {
+-            backdrop: string;
+-        };
+-        blur: {
+-            backdrop: string;
+-        };
+-    };
+-    triggerScaleOnOpen: {
+-        true: {
+-            trigger: string[];
+-        };
+-        false: {};
+-    };
+-    disableAnimation: {
+-        true: {
+-            base: string;
+-        };
+-    };
+-    isTriggerDisabled: {
+-        true: {
+-            trigger: string;
+-        };
+-        false: {};
+-    };
+-}, {
+-    base: string[];
+-    content: string[];
+-    trigger: string[];
+-    backdrop: string[];
+-    arrow: never[];
+-}, undefined, unknown, unknown, undefined>>;
++}, undefined>;
+ type PopoverVariantProps = VariantProps<typeof popover>;
+ type PopoverSlots = keyof ReturnType<typeof popover>;
+ 
+diff --git a/dist/components/progress.d.ts b/dist/components/progress.d.ts
+index 2e386eb..64f4aa9 100644
+--- a/dist/components/progress.d.ts
++++ b/dist/components/progress.d.ts
+@@ -195,95 +195,7 @@ declare const progress: tailwind_variants.TVReturnType<{
+     value: string;
+     track: string;
+     indicator: string;
+-}, tailwind_variants.TVReturnType<{
+-    color: {
+-        default: {
+-            indicator: string;
+-        };
+-        primary: {
+-            indicator: string;
+-        };
+-        secondary: {
+-            indicator: string;
+-        };
+-        success: {
+-            indicator: string;
+-        };
+-        warning: {
+-            indicator: string;
+-        };
+-        danger: {
+-            indicator: string;
+-        };
+-    };
+-    size: {
+-        sm: {
+-            label: string;
+-            value: string;
+-            track: string;
+-        };
+-        md: {
+-            label: string;
+-            value: string;
+-            track: string;
+-        };
+-        lg: {
+-            label: string;
+-            value: string;
+-            track: string;
+-        };
+-    };
+-    radius: {
+-        none: {
+-            track: string;
+-            indicator: string;
+-        };
+-        sm: {
+-            track: string;
+-            indicator: string;
+-        };
+-        md: {
+-            track: string;
+-            indicator: string;
+-        };
+-        lg: {
+-            track: string;
+-            indicator: string;
+-        };
+-        full: {
+-            track: string;
+-            indicator: string;
+-        };
+-    };
+-    isStriped: {
+-        true: {
+-            indicator: string;
+-        };
+-    };
+-    isIndeterminate: {
+-        true: {
+-            indicator: string[];
+-        };
+-    };
+-    isDisabled: {
+-        true: {
+-            base: string;
+-        };
+-    };
+-    disableAnimation: {
+-        true: {};
+-        false: {
+-            indicator: string;
+-        };
+-    };
+-}, {
+-    base: string;
+-    label: string;
+-    labelWrapper: string;
+-    value: string;
+-    track: string;
+-    indicator: string;
+-}, undefined, unknown, unknown, undefined>>;
++}, undefined>;
+ /**
+  * CircularProgress **Tailwind Variants** component
+  *
+@@ -427,69 +339,7 @@ declare const circularProgress: tailwind_variants.TVReturnType<{
+     track: string;
+     indicator: string;
+     value: string;
+-}, tailwind_variants.TVReturnType<{
+-    color: {
+-        default: {
+-            svg: string;
+-        };
+-        primary: {
+-            svg: string;
+-        };
+-        secondary: {
+-            svg: string;
+-        };
+-        success: {
+-            svg: string;
+-        };
+-        warning: {
+-            svg: string;
+-        };
+-        danger: {
+-            svg: string;
+-        };
+-    };
+-    size: {
+-        sm: {
+-            svg: string;
+-            label: string;
+-            value: string;
+-        };
+-        md: {
+-            svg: string;
+-            label: string;
+-            value: string;
+-        };
+-        lg: {
+-            svg: string;
+-            label: string;
+-            value: string;
+-        };
+-    };
+-    isIndeterminate: {
+-        true: {
+-            svg: string;
+-        };
+-    };
+-    isDisabled: {
+-        true: {
+-            base: string;
+-        };
+-    };
+-    disableAnimation: {
+-        true: {};
+-        false: {
+-            indicator: string;
+-        };
+-    };
+-}, {
+-    base: string;
+-    label: string;
+-    svgWrapper: string;
+-    svg: string;
+-    track: string;
+-    indicator: string;
+-    value: string;
+-}, undefined, unknown, unknown, undefined>>;
++}, undefined>;
+ type ProgressVariantProps = VariantProps<typeof progress>;
+ type ProgressSlots = keyof ReturnType<typeof progress>;
+ type CircularProgressVariantProps = VariantProps<typeof circularProgress>;
+diff --git a/dist/components/radio.d.ts b/dist/components/radio.d.ts
+index 4c584b2..112ea71 100644
+--- a/dist/components/radio.d.ts
++++ b/dist/components/radio.d.ts
+@@ -183,87 +183,7 @@ declare const radio: tailwind_variants.TVReturnType<{
+     control: string[];
+     label: string;
+     description: string;
+-}, tailwind_variants.TVReturnType<{
+-    color: {
+-        default: {
+-            control: string;
+-            wrapper: string;
+-        };
+-        primary: {
+-            control: string;
+-            wrapper: string;
+-        };
+-        secondary: {
+-            control: string;
+-            wrapper: string;
+-        };
+-        success: {
+-            control: string;
+-            wrapper: string;
+-        };
+-        warning: {
+-            control: string;
+-            wrapper: string;
+-        };
+-        danger: {
+-            control: string;
+-            wrapper: string;
+-        };
+-    };
+-    size: {
+-        sm: {
+-            wrapper: string;
+-            control: string;
+-            labelWrapper: string;
+-            label: string;
+-            description: string;
+-        };
+-        md: {
+-            wrapper: string;
+-            control: string;
+-            labelWrapper: string;
+-            label: string;
+-            description: string;
+-        };
+-        lg: {
+-            wrapper: string;
+-            control: string;
+-            labelWrapper: string;
+-            label: string;
+-            description: string;
+-        };
+-    };
+-    isDisabled: {
+-        true: {
+-            base: string;
+-        };
+-    };
+-    isInvalid: {
+-        true: {
+-            control: string;
+-            wrapper: string;
+-            label: string;
+-            description: string;
+-        };
+-    };
+-    disableAnimation: {
+-        true: {};
+-        false: {
+-            wrapper: string[];
+-            control: string;
+-            label: string;
+-            description: string;
+-        };
+-    };
+-}, {
+-    base: string;
+-    wrapper: string[];
+-    hiddenInput: string[];
+-    labelWrapper: string;
+-    control: string[];
+-    label: string;
+-    description: string;
+-}, undefined, unknown, unknown, undefined>>;
++}, undefined>;
+ /**
+  * RadioGroup wrapper **Tailwind Variants** component
+  *
+@@ -323,30 +243,7 @@ declare const radioGroup: tailwind_variants.TVReturnType<{
+     wrapper: string;
+     description: string;
+     errorMessage: string;
+-}, tailwind_variants.TVReturnType<{
+-    isRequired: {
+-        true: {
+-            label: string;
+-        };
+-    };
+-    isInvalid: {
+-        true: {
+-            description: string;
+-        };
+-    };
+-    disableAnimation: {
+-        true: {};
+-        false: {
+-            description: string;
+-        };
+-    };
+-}, {
+-    base: string;
+-    label: string;
+-    wrapper: string;
+-    description: string;
+-    errorMessage: string;
+-}, undefined, unknown, unknown, undefined>>;
++}, undefined>;
+ type RadioGroupSlots = keyof ReturnType<typeof radioGroup>;
+ type RadioVariantProps = VariantProps<typeof radio>;
+ type RadioSlots = keyof ReturnType<typeof radio>;
+diff --git a/dist/components/scroll-shadow.d.ts b/dist/components/scroll-shadow.d.ts
+index 2843550..fa4cc1d 100644
+--- a/dist/components/scroll-shadow.d.ts
++++ b/dist/components/scroll-shadow.d.ts
+@@ -30,16 +30,7 @@ declare const scrollShadow: tailwind_variants.TVReturnType<{
+         true: string;
+         false: string;
+     };
+-}, undefined, tailwind_variants.TVReturnType<{
+-    orientation: {
+-        vertical: string[];
+-        horizontal: string[];
+-    };
+-    hideScrollBar: {
+-        true: string;
+-        false: string;
+-    };
+-}, undefined, never[], unknown, unknown, undefined>>;
++}, undefined, undefined>;
+ type ScrollShadowVariantProps = VariantProps<typeof scrollShadow>;
+ 
+ export { type ScrollShadowVariantProps, scrollShadow };
+diff --git a/dist/components/select.d.ts b/dist/components/select.d.ts
+index 164a2b3..164f39a 100644
+--- a/dist/components/select.d.ts
++++ b/dist/components/select.d.ts
+@@ -349,181 +349,7 @@ declare const select: tailwind_variants.TVReturnType<{
+     errorMessage: string;
+     endWrapper: string;
+     endContent: string;
+-}, tailwind_variants.TVReturnType<{
+-    variant: {
+-        flat: {
+-            trigger: string[];
+-            clearButton: string;
+-        };
+-        faded: {
+-            trigger: string[];
+-            value: string;
+-            clearButton: string;
+-        };
+-        bordered: {
+-            trigger: string[];
+-            value: string;
+-            clearButton: string;
+-        };
+-        underlined: {
+-            trigger: string[];
+-            value: string;
+-            clearButton: string;
+-        };
+-    };
+-    color: {
+-        default: {};
+-        primary: {
+-            selectorIcon: string;
+-        };
+-        secondary: {
+-            selectorIcon: string;
+-        };
+-        success: {
+-            selectorIcon: string;
+-        };
+-        warning: {
+-            selectorIcon: string;
+-        };
+-        danger: {
+-            selectorIcon: string;
+-        };
+-    };
+-    size: {
+-        sm: {
+-            label: string;
+-            trigger: string;
+-            value: string;
+-            clearButton: string;
+-        };
+-        md: {
+-            trigger: string;
+-            value: string;
+-            clearButton: string;
+-        };
+-        lg: {
+-            trigger: string;
+-            value: string;
+-            clearButton: string;
+-        };
+-    };
+-    radius: {
+-        none: {
+-            trigger: string;
+-        };
+-        sm: {
+-            trigger: string;
+-        };
+-        md: {
+-            trigger: string;
+-        };
+-        lg: {
+-            trigger: string;
+-        };
+-        full: {
+-            trigger: string;
+-        };
+-    };
+-    labelPlacement: {
+-        outside: {
+-            base: string;
+-            clearButton: string;
+-        };
+-        "outside-left": {
+-            base: string;
+-            label: string;
+-            clearButton: string;
+-        };
+-        "outside-top": {
+-            base: string;
+-            label: string;
+-            clearButton: string;
+-        };
+-        inside: {
+-            label: string;
+-            trigger: string;
+-        };
+-    };
+-    fullWidth: {
+-        true: {
+-            base: string;
+-        };
+-        false: {
+-            base: string;
+-        };
+-    };
+-    isClearable: {
+-        true: {
+-            clearButton: string;
+-            endContent: string;
+-        };
+-    };
+-    isDisabled: {
+-        true: {
+-            base: string;
+-            trigger: string;
+-        };
+-    };
+-    isInvalid: {
+-        true: {
+-            label: string;
+-            value: string;
+-            selectorIcon: string;
+-        };
+-    };
+-    isRequired: {
+-        true: {
+-            label: string;
+-        };
+-    };
+-    isMultiline: {
+-        true: {
+-            label: string;
+-            trigger: string;
+-        };
+-        false: {
+-            value: string;
+-        };
+-    };
+-    disableAnimation: {
+-        true: {
+-            trigger: string;
+-            base: string;
+-            label: string;
+-            selectorIcon: string;
+-        };
+-        false: {
+-            base: string;
+-            label: string[];
+-            selectorIcon: string;
+-            clearButton: string[];
+-        };
+-    };
+-    disableSelectorIconRotation: {
+-        true: {};
+-        false: {
+-            selectorIcon: string;
+-        };
+-    };
+-}, {
+-    base: string[];
+-    label: string[];
+-    mainWrapper: string;
+-    trigger: string;
+-    innerWrapper: string;
+-    selectorIcon: string;
+-    spinner: string;
+-    value: string[];
+-    listboxWrapper: string;
+-    listbox: string;
+-    popoverContent: string;
+-    clearButton: string[];
+-    helperWrapper: string;
+-    description: string;
+-    errorMessage: string;
+-    endWrapper: string;
+-    endContent: string;
+-}, undefined, unknown, unknown, undefined>>;
++}, undefined>;
+ type SelectVariantProps = VariantProps<typeof select>;
+ type SelectSlots = keyof ReturnType<typeof select>;
+ 
+diff --git a/dist/components/skeleton.d.ts b/dist/components/skeleton.d.ts
+index 6d0f0b7..bfa61d8 100644
+--- a/dist/components/skeleton.d.ts
++++ b/dist/components/skeleton.d.ts
+@@ -39,21 +39,7 @@ declare const skeleton: tailwind_variants.TVReturnType<{
+ }, {
+     base: string[];
+     content: string[];
+-}, tailwind_variants.TVReturnType<{
+-    disableAnimation: {
+-        true: {
+-            base: string;
+-            content: string;
+-        };
+-        false: {
+-            base: string;
+-            content: string;
+-        };
+-    };
+-}, {
+-    base: string[];
+-    content: string[];
+-}, undefined, unknown, unknown, undefined>>;
++}, undefined>;
+ type SkeletonVariantProps = VariantProps<typeof skeleton>;
+ type SkeletonSlots = keyof ReturnType<typeof skeleton>;
+ 
+diff --git a/dist/components/slider.d.ts b/dist/components/slider.d.ts
+index f2fb8f3..20120fb 100644
+--- a/dist/components/slider.d.ts
++++ b/dist/components/slider.d.ts
+@@ -325,157 +325,7 @@ declare const slider: tailwind_variants.TVReturnType<{
+     thumb: (string | string[])[];
+     startContent: never[];
+     endContent: never[];
+-}, tailwind_variants.TVReturnType<{
+-    size: {
+-        sm: {
+-            label: string;
+-            value: string;
+-            thumb: string;
+-            step: string;
+-        };
+-        md: {
+-            thumb: string;
+-            label: string;
+-            value: string;
+-        };
+-        lg: {
+-            thumb: string;
+-            step: string;
+-            label: string;
+-            value: string;
+-            mark: string;
+-        };
+-    };
+-    radius: {
+-        none: {
+-            thumb: string;
+-        };
+-        sm: {
+-            thumb: string;
+-        };
+-        md: {
+-            thumb: string;
+-        };
+-        lg: {
+-            thumb: string;
+-        };
+-        full: {
+-            thumb: string;
+-        };
+-    };
+-    color: {
+-        foreground: {
+-            filler: string;
+-            thumb: string;
+-        };
+-        primary: {
+-            filler: string;
+-            thumb: string;
+-        };
+-        secondary: {
+-            filler: string;
+-            thumb: string;
+-        };
+-        success: {
+-            filler: string;
+-            thumb: string;
+-        };
+-        warning: {
+-            filler: string;
+-            thumb: string;
+-        };
+-        danger: {
+-            filler: string;
+-            thumb: string;
+-        };
+-    };
+-    isVertical: {
+-        true: {
+-            base: string;
+-            trackWrapper: string;
+-            filler: string;
+-            thumb: string;
+-            track: string;
+-            labelWrapper: string;
+-            step: string[];
+-            mark: string[];
+-        };
+-        false: {
+-            thumb: string;
+-            trackWrapper: string;
+-            track: string;
+-            step: string[];
+-            mark: string[];
+-        };
+-    };
+-    isDisabled: {
+-        false: {
+-            thumb: string[];
+-        };
+-        true: {
+-            base: string;
+-            thumb: string;
+-        };
+-    };
+-    hasMarks: {
+-        true: {
+-            base: string;
+-            mark: string;
+-        };
+-        false: {};
+-    };
+-    showOutline: {
+-        true: {
+-            thumb: string;
+-        };
+-        false: {
+-            thumb: string;
+-        };
+-    };
+-    hideValue: {
+-        true: {
+-            value: string;
+-        };
+-    };
+-    hideThumb: {
+-        true: {
+-            thumb: string;
+-            track: string;
+-        };
+-    };
+-    hasSingleThumb: {
+-        true: {};
+-        false: {};
+-    };
+-    disableAnimation: {
+-        true: {
+-            thumb: string;
+-        };
+-        false: {
+-            thumb: string;
+-            mark: string;
+-        };
+-    };
+-    disableThumbScale: {
+-        true: {};
+-        false: {
+-            thumb: string;
+-        };
+-    };
+-}, {
+-    base: string;
+-    labelWrapper: string;
+-    label: string;
+-    value: string;
+-    step: string[];
+-    mark: string[];
+-    trackWrapper: string;
+-    track: string[];
+-    filler: string;
+-    thumb: (string | string[])[];
+-    startContent: never[];
+-    endContent: never[];
+-}, undefined, unknown, unknown, undefined>>;
++}, undefined>;
+ type SliderVariantProps = VariantProps<typeof slider>;
+ type SliderSlots = keyof ReturnType<typeof slider>;
+ 
+diff --git a/dist/components/snippet.d.ts b/dist/components/snippet.d.ts
+index 7e5b826..2f01d1d 100644
+--- a/dist/components/snippet.d.ts
++++ b/dist/components/snippet.d.ts
+@@ -139,67 +139,7 @@ declare const snippet: tailwind_variants.TVReturnType<{
+     copyButton: string[];
+     copyIcon: string[];
+     checkIcon: string[];
+-}, tailwind_variants.TVReturnType<{
+-    variant: {
+-        flat: string;
+-        solid: string;
+-        bordered: string;
+-        shadow: string;
+-    };
+-    color: {
+-        default: {};
+-        primary: {};
+-        secondary: {};
+-        success: {};
+-        warning: {};
+-        danger: {};
+-    };
+-    size: {
+-        sm: {
+-            base: string;
+-        };
+-        md: {
+-            base: string;
+-        };
+-        lg: {
+-            base: string;
+-        };
+-    };
+-    radius: {
+-        none: {
+-            base: string;
+-        };
+-        sm: {
+-            base: string;
+-        };
+-        md: {
+-            base: string;
+-        };
+-        lg: {
+-            base: string;
+-        };
+-    };
+-    fullWidth: {
+-        true: {
+-            base: string;
+-        };
+-    };
+-    disableAnimation: {
+-        true: {};
+-        false: {
+-            copyIcon: string;
+-            checkIcon: string;
+-        };
+-    };
+-}, {
+-    base: string;
+-    pre: string;
+-    content: string;
+-    symbol: string;
+-    copyButton: string[];
+-    copyIcon: string[];
+-    checkIcon: string[];
+-}, undefined, unknown, unknown, undefined>>;
++}, undefined>;
+ type SnippetVariantProps = VariantProps<typeof snippet>;
+ type SnippetSlots = keyof ReturnType<typeof snippet>;
+ 
+diff --git a/dist/components/spacer.d.ts b/dist/components/spacer.d.ts
+index 6ea2282..1502269 100644
+--- a/dist/components/spacer.d.ts
++++ b/dist/components/spacer.d.ts
+@@ -20,12 +20,7 @@ declare const spacer: tailwind_variants.TVReturnType<{
+         true: string;
+         false: string;
+     };
+-}, undefined, tailwind_variants.TVReturnType<{
+-    isInline: {
+-        true: string;
+-        false: string;
+-    };
+-}, undefined, "w-px h-px inline-block", unknown, unknown, undefined>>;
++}, undefined, undefined>;
+ type SpacerVariantProps = VariantProps<typeof spacer>;
+ 
+ export { type SpacerVariantProps, spacer };
+diff --git a/dist/components/spinner.d.ts b/dist/components/spinner.d.ts
+index 0e69325..3876235 100644
+--- a/dist/components/spinner.d.ts
++++ b/dist/components/spinner.d.ts
+@@ -265,133 +265,7 @@ declare const spinner: tailwind_variants.TVReturnType<{
+     circle2: string;
+     dots: string;
+     spinnerBars: string[];
+-}, tailwind_variants.TVReturnType<{
+-    size: {
+-        sm: {
+-            wrapper: string;
+-            circle1: string;
+-            circle2: string;
+-            dots: string;
+-            label: string;
+-        };
+-        md: {
+-            wrapper: string;
+-            circle1: string;
+-            circle2: string;
+-            dots: string;
+-            label: string;
+-        };
+-        lg: {
+-            wrapper: string;
+-            circle1: string;
+-            circle2: string;
+-            dots: string;
+-            label: string;
+-        };
+-    };
+-    color: {
+-        current: {
+-            circle1: string;
+-            circle2: string;
+-            dots: string;
+-            spinnerBars: string;
+-        };
+-        white: {
+-            circle1: string;
+-            circle2: string;
+-            dots: string;
+-            spinnerBars: string;
+-        };
+-        default: {
+-            circle1: string;
+-            circle2: string;
+-            dots: string;
+-            spinnerBars: string;
+-        };
+-        primary: {
+-            circle1: string;
+-            circle2: string;
+-            dots: string;
+-            spinnerBars: string;
+-        };
+-        secondary: {
+-            circle1: string;
+-            circle2: string;
+-            dots: string;
+-            spinnerBars: string;
+-        };
+-        success: {
+-            circle1: string;
+-            circle2: string;
+-            dots: string;
+-            spinnerBars: string;
+-        };
+-        warning: {
+-            circle1: string;
+-            circle2: string;
+-            dots: string;
+-            spinnerBars: string;
+-        };
+-        danger: {
+-            circle1: string;
+-            circle2: string;
+-            dots: string;
+-            spinnerBars: string;
+-        };
+-    };
+-    labelColor: {
+-        foreground: {
+-            label: string;
+-        };
+-        primary: {
+-            label: string;
+-        };
+-        secondary: {
+-            label: string;
+-        };
+-        success: {
+-            label: string;
+-        };
+-        warning: {
+-            label: string;
+-        };
+-        danger: {
+-            label: string;
+-        };
+-    };
+-    variant: {
+-        default: {
+-            circle1: string[];
+-            circle2: string[];
+-        };
+-        gradient: {
+-            circle1: string[];
+-            circle2: string[];
+-        };
+-        wave: {
+-            wrapper: string;
+-            dots: string[];
+-        };
+-        dots: {
+-            wrapper: string;
+-            dots: string[];
+-        };
+-        spinner: {};
+-        simple: {
+-            wrapper: string;
+-            circle1: string;
+-            circle2: string;
+-        };
+-    };
+-}, {
+-    base: string;
+-    wrapper: string;
+-    label: string;
+-    circle1: string;
+-    circle2: string;
+-    dots: string;
+-    spinnerBars: string[];
+-}, undefined, unknown, unknown, undefined>>;
++}, undefined>;
+ type SpinnerVariantProps = VariantProps<typeof spinner>;
+ type SpinnerSlots = keyof ReturnType<typeof spinner>;
+ 
+diff --git a/dist/components/table.d.ts b/dist/components/table.d.ts
+index 5ac8826..9bdf380 100644
+--- a/dist/components/table.d.ts
++++ b/dist/components/table.d.ts
+@@ -292,135 +292,7 @@ declare const table: tailwind_variants.TVReturnType<{
+     sortIcon: string[];
+     emptyWrapper: string;
+     loadingWrapper: string;
+-}, tailwind_variants.TVReturnType<{
+-    color: {
+-        default: {
+-            td: string;
+-        };
+-        primary: {
+-            td: string;
+-        };
+-        secondary: {
+-            td: string;
+-        };
+-        success: {
+-            td: string;
+-        };
+-        warning: {
+-            td: string;
+-        };
+-        danger: {
+-            td: string;
+-        };
+-    };
+-    layout: {
+-        auto: {
+-            table: string;
+-        };
+-        fixed: {
+-            table: string;
+-        };
+-    };
+-    shadow: {
+-        none: {
+-            wrapper: string;
+-        };
+-        sm: {
+-            wrapper: string;
+-        };
+-        md: {
+-            wrapper: string;
+-        };
+-        lg: {
+-            wrapper: string;
+-        };
+-    };
+-    hideHeader: {
+-        true: {
+-            thead: string;
+-        };
+-    };
+-    isStriped: {
+-        true: {
+-            td: string[];
+-        };
+-    };
+-    isCompact: {
+-        true: {
+-            td: string;
+-        };
+-        false: {};
+-    };
+-    isHeaderSticky: {
+-        true: {
+-            thead: string;
+-        };
+-    };
+-    isSelectable: {
+-        true: {
+-            tr: string;
+-            td: string[];
+-        };
+-    };
+-    isMultiSelectable: {
+-        true: {
+-            td: string[];
+-        };
+-        false: {
+-            td: string[];
+-        };
+-    };
+-    radius: {
+-        none: {
+-            wrapper: string;
+-            th: string[];
+-            td: string[];
+-        };
+-        sm: {
+-            wrapper: string;
+-        };
+-        md: {
+-            wrapper: string;
+-        };
+-        lg: {
+-            wrapper: string;
+-        };
+-    };
+-    fullWidth: {
+-        true: {
+-            base: string;
+-            wrapper: string;
+-            table: string;
+-        };
+-    };
+-    align: {
+-        start: {
+-            th: string;
+-            td: string;
+-        };
+-        center: {
+-            th: string;
+-            td: string;
+-        };
+-        end: {
+-            th: string;
+-            td: string;
+-        };
+-    };
+-}, {
+-    base: string;
+-    wrapper: string[];
+-    table: string;
+-    thead: string;
+-    tbody: string;
+-    tr: string[];
+-    th: string[];
+-    td: string[];
+-    tfoot: string;
+-    sortIcon: string[];
+-    emptyWrapper: string;
+-    loadingWrapper: string;
+-}, undefined, unknown, unknown, undefined>>;
++}, undefined>;
+ type TableVariantProps = VariantProps<typeof table>;
+ type TableSlots = keyof ReturnType<typeof table>;
+ type TableReturnType = ReturnType<typeof table>;
+diff --git a/dist/components/tabs.d.ts b/dist/components/tabs.d.ts
+index 8e8afda..e0e49dc 100644
+--- a/dist/components/tabs.d.ts
++++ b/dist/components/tabs.d.ts
+@@ -232,114 +232,7 @@ declare const tabs: tailwind_variants.TVReturnType<{
+     cursor: string[];
+     panel: string[];
+     tabWrapper: never[];
+-}, tailwind_variants.TVReturnType<{
+-    variant: {
+-        solid: {};
+-        light: {
+-            tabList: string;
+-        };
+-        underlined: {
+-            tabList: string;
+-            cursor: string;
+-        };
+-        bordered: {
+-            tabList: string;
+-        };
+-    };
+-    color: {
+-        default: {};
+-        primary: {};
+-        secondary: {};
+-        success: {};
+-        warning: {};
+-        danger: {};
+-    };
+-    size: {
+-        sm: {
+-            tabList: string;
+-            tab: string;
+-            cursor: string;
+-        };
+-        md: {
+-            tabList: string;
+-            tab: string;
+-            cursor: string;
+-        };
+-        lg: {
+-            tabList: string;
+-            tab: string;
+-            cursor: string;
+-        };
+-    };
+-    radius: {
+-        none: {
+-            tabList: string;
+-            tab: string;
+-            cursor: string;
+-        };
+-        sm: {
+-            tabList: string;
+-            tab: string;
+-            cursor: string;
+-        };
+-        md: {
+-            tabList: string;
+-            tab: string;
+-            cursor: string;
+-        };
+-        lg: {
+-            tabList: string;
+-            tab: string;
+-            cursor: string;
+-        };
+-        full: {
+-            tabList: string;
+-            tab: string;
+-            cursor: string;
+-        };
+-    };
+-    fullWidth: {
+-        true: {
+-            base: string;
+-            tabList: string;
+-        };
+-    };
+-    isDisabled: {
+-        true: {
+-            tabList: string;
+-        };
+-    };
+-    disableAnimation: {
+-        true: {
+-            tab: string;
+-            tabContent: string;
+-        };
+-    };
+-    placement: {
+-        top: {};
+-        start: {
+-            tabList: string;
+-            panel: string;
+-            tabWrapper: string;
+-        };
+-        end: {
+-            tabList: string;
+-            panel: string;
+-            tabWrapper: string;
+-        };
+-        bottom: {
+-            tabWrapper: string;
+-        };
+-    };
+-}, {
+-    base: string;
+-    tabList: string[];
+-    tab: string[];
+-    tabContent: string[];
+-    cursor: string[];
+-    panel: string[];
+-    tabWrapper: never[];
+-}, undefined, unknown, unknown, undefined>>;
++}, undefined>;
+ type TabsVariantProps = VariantProps<typeof tabs>;
+ type TabsSlots = keyof ReturnType<typeof tabs>;
+ type TabsReturnType = ReturnType<typeof tabs>;
+diff --git a/dist/components/toast.d.ts b/dist/components/toast.d.ts
+index 58dcc5a..56cea91 100644
+--- a/dist/components/toast.d.ts
++++ b/dist/components/toast.d.ts
+@@ -23,18 +23,7 @@ declare const toastRegion: tailwind_variants.TVReturnType<{
+     };
+ }, {
+     base: string;
+-}, tailwind_variants.TVReturnType<{
+-    disableAnimation: {
+-        false: {
+-            base: string;
+-        };
+-        true: {
+-            base: string[];
+-        };
+-    };
+-}, {
+-    base: string;
+-}, undefined, unknown, unknown, undefined>>;
++}, undefined>;
+ declare const toast: tailwind_variants.TVReturnType<{
+     size: {
+         sm: {
+@@ -225,102 +214,7 @@ declare const toast: tailwind_variants.TVReturnType<{
+     motionDiv: string[];
+     closeButton: string[];
+     closeIcon: string[];
+-}, tailwind_variants.TVReturnType<{
+-    size: {
+-        sm: {
+-            icon: string;
+-            loadingComponent: string;
+-        };
+-        md: {};
+-        lg: {};
+-    };
+-    variant: {
+-        flat: string;
+-        solid: string;
+-        bordered: string;
+-    };
+-    color: {
+-        default: string;
+-        foreground: {
+-            progressIndicator: string;
+-        };
+-        primary: {
+-            progressIndicator: string;
+-        };
+-        secondary: {
+-            progressIndicator: string;
+-        };
+-        success: {
+-            progressIndicator: string;
+-        };
+-        warning: {
+-            progressIndicator: string;
+-        };
+-        danger: {
+-            progressIndicator: string;
+-        };
+-    };
+-    radius: {
+-        none: {
+-            base: string;
+-            progressTrack: string;
+-        };
+-        sm: {
+-            base: string;
+-            progressTrack: string;
+-        };
+-        md: {
+-            base: string;
+-            progressTrack: string;
+-        };
+-        lg: {
+-            base: string;
+-            progressTrack: string;
+-        };
+-        full: {
+-            base: string;
+-            closeButton: string;
+-            progressTrack: string;
+-        };
+-    };
+-    disableAnimation: {
+-        true: {
+-            closeButton: string;
+-            base: string;
+-        };
+-        false: {
+-            closeButton: string;
+-            base: string[];
+-        };
+-    };
+-    shadow: {
+-        none: {
+-            base: string;
+-        };
+-        sm: {
+-            base: string;
+-        };
+-        md: {
+-            base: string;
+-        };
+-        lg: {
+-            base: string;
+-        };
+-    };
+-}, {
+-    base: string[];
+-    wrapper: string[];
+-    title: string[];
+-    description: string[];
+-    icon: string[];
+-    loadingComponent: string[];
+-    content: string[];
+-    progressTrack: string[];
+-    progressIndicator: string[];
+-    motionDiv: string[];
+-    closeButton: string[];
+-    closeIcon: string[];
+-}, undefined, unknown, unknown, undefined>>;
++}, undefined>;
+ type ToastVariantProps = VariantProps<typeof toast>;
+ type ToastSlots = keyof ReturnType<typeof toast>;
+ type ToastRegionVariantProps = VariantProps<typeof toastRegion>;
+diff --git a/dist/components/toggle.d.ts b/dist/components/toggle.d.ts
+index d09e9c5..cc2b51c 100644
+--- a/dist/components/toggle.d.ts
++++ b/dist/components/toggle.d.ts
+@@ -166,77 +166,7 @@ declare const toggle: tailwind_variants.TVReturnType<{
+     endContent: string;
+     thumbIcon: string;
+     label: string;
+-}, tailwind_variants.TVReturnType<{
+-    color: {
+-        default: {
+-            wrapper: string[];
+-        };
+-        primary: {
+-            wrapper: string[];
+-        };
+-        secondary: {
+-            wrapper: string[];
+-        };
+-        success: {
+-            wrapper: string[];
+-        };
+-        warning: {
+-            wrapper: string[];
+-        };
+-        danger: {
+-            wrapper: string[];
+-        };
+-    };
+-    size: {
+-        sm: {
+-            wrapper: string;
+-            thumb: string[];
+-            endContent: string;
+-            startContent: string;
+-            label: string;
+-        };
+-        md: {
+-            wrapper: string;
+-            thumb: string[];
+-            endContent: string;
+-            startContent: string;
+-            label: string;
+-        };
+-        lg: {
+-            wrapper: string;
+-            thumb: string[];
+-            endContent: string;
+-            startContent: string;
+-            label: string;
+-        };
+-    };
+-    isDisabled: {
+-        true: {
+-            base: string;
+-        };
+-    };
+-    disableAnimation: {
+-        true: {
+-            wrapper: string;
+-            thumb: string;
+-        };
+-        false: {
+-            wrapper: string;
+-            thumb: string;
+-            startContent: string[];
+-            endContent: string[];
+-        };
+-    };
+-}, {
+-    base: string;
+-    wrapper: string[];
+-    thumb: string[];
+-    hiddenInput: string[];
+-    startContent: string;
+-    endContent: string;
+-    thumbIcon: string;
+-    label: string;
+-}, undefined, unknown, unknown, undefined>>;
++}, undefined>;
+ type ToggleVariantProps = VariantProps<typeof toggle>;
+ type ToggleSlots = keyof ReturnType<typeof toggle>;
+ 
+diff --git a/dist/components/user.d.ts b/dist/components/user.d.ts
+index 7f0c497..a4dd29e 100644
+--- a/dist/components/user.d.ts
++++ b/dist/components/user.d.ts
+@@ -52,12 +52,7 @@ declare const user: tailwind_variants.TVReturnType<{
+     wrapper: string;
+     name: string;
+     description: string;
+-}, tailwind_variants.TVReturnType<unknown, {
+-    base: string[];
+-    wrapper: string;
+-    name: string;
+-    description: string;
+-}, undefined, unknown, unknown, undefined>>;
++}, undefined>;
+ type UserSlots = keyof ReturnType<typeof user>;
+ 
+ export { type UserSlots, user };

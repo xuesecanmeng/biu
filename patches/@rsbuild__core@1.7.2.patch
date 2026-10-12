@@ -1,0 +1,45 @@
+diff --git a/compiled/@jridgewell/remapping/index.d.ts b/compiled/@jridgewell/remapping/index.d.ts
+index a2ac5f9bc2ef089667d5c5821cc5a0a28c10d921..1070fe12771b509b9cc43f64f35a4618fe278bf4 100644
+--- a/compiled/@jridgewell/remapping/index.d.ts
++++ b/compiled/@jridgewell/remapping/index.d.ts
+@@ -1 +1,2 @@
+-export = any;
++declare const vendor: unknown;
++export = vendor;
+diff --git a/compiled/launch-editor-middleware/index.d.ts b/compiled/launch-editor-middleware/index.d.ts
+index a2ac5f9bc2ef089667d5c5821cc5a0a28c10d921..1070fe12771b509b9cc43f64f35a4618fe278bf4 100644
+--- a/compiled/launch-editor-middleware/index.d.ts
++++ b/compiled/launch-editor-middleware/index.d.ts
+@@ -1 +1,2 @@
+-export = any;
++declare const vendor: unknown;
++export = vendor;
+diff --git a/compiled/sirv/index.d.ts b/compiled/sirv/index.d.ts
+index a2ac5f9bc2ef089667d5c5821cc5a0a28c10d921..1070fe12771b509b9cc43f64f35a4618fe278bf4 100644
+--- a/compiled/sirv/index.d.ts
++++ b/compiled/sirv/index.d.ts
+@@ -1 +1,2 @@
+-export = any;
++declare const vendor: unknown;
++export = vendor;
+diff --git a/compiled/ws/index.d.ts b/compiled/ws/index.d.ts
+index 7ae198f1fdacbf06731707c229fee18c4cfb8928..484d5aa3f3e76de56d9791f66851042630f3b02e 100644
+--- a/compiled/ws/index.d.ts
++++ b/compiled/ws/index.d.ts
+@@ -1,6 +1,6 @@
+ /// <reference types="node" />
+ import { EventEmitter } from 'events';
+-import { ClientRequestArgs, IncomingMessage, ClientRequest, OutgoingHttpHeaders, Agent, Server } from 'http';
++import { ClientRequestArgs, IncomingMessage, ClientRequest, OutgoingHttpHeaders, Agent, Server as HttpServer } from 'http';
+ import { Server as Server$1 } from 'https';
+ import { createConnection } from 'net';
+ import { Duplex, DuplexOptions } from 'stream';
+@@ -323,7 +323,7 @@ declare namespace WebSocket {
+         host?: string | undefined;
+         port?: number | undefined;
+         backlog?: number | undefined;
+-        server?: Server<V> | Server$1<V> | undefined;
++        server?: HttpServer<V> | Server$1<V> | undefined;
+         verifyClient?:
+             | VerifyClientCallbackAsync<InstanceType<V>>
+             | VerifyClientCallbackSync<InstanceType<V>>

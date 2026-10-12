@@ -1,12 +1,7 @@
 import { ipcMain } from "electron";
 
-import { getLyricsByLrclib, type SeachSongByLrclibParams } from "./api/lrclib-lyric";
-import {
-  getLyricsByNetease,
-  getSongByNetease,
-  type GetLyricsByNeteaseParams,
-  type SearchSongByNeteaseParams,
-} from "./api/netease-lyric";
+import { getLyricsByLrclib } from "./api/lrclib-lyric";
+import { getLyricsByNetease, getSongByNetease } from "./api/netease-lyric";
 import { channel } from "./channel";
 import { addFurigana } from "./furigana";
 
@@ -19,7 +14,7 @@ export function registerLyricsHandlers() {
     return getLyricsByNetease(params);
   });
 
-  ipcMain.handle(channel.lyrics.searchLrclib, async (_, params: SeachSongByLrclibParams) => {
+  ipcMain.handle(channel.lyrics.searchLrclib, async (_, params: SearchSongByLrclibParams) => {
     return getLyricsByLrclib(params);
   });
 

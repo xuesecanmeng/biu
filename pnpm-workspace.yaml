@@ -1,0 +1,21 @@
+patchedDependencies:
+  '@dnd-kit/core@6.3.1': patches/@dnd-kit__core@6.3.1.patch
+  '@dnd-kit/sortable@10.0.0': patches/@dnd-kit__sortable@10.0.0.patch
+  '@heroui/accordion@2.2.26': patches/@heroui__accordion@2.2.26.patch
+  '@heroui/calendar@2.2.29': patches/@heroui__calendar@2.2.29.patch
+  '@heroui/listbox@2.3.28': patches/@heroui__listbox@2.3.28.patch
+  '@heroui/menu@2.2.28': patches/@heroui__menu@2.2.28.patch
+  '@heroui/popover@2.3.29': patches/@heroui__popover@2.3.29.patch
+  '@heroui/snippet@2.2.30': patches/@heroui__snippet@2.2.30.patch
+  '@heroui/spinner@2.2.26': patches/@heroui__spinner@2.2.26.patch
+  '@heroui/system-rsc@2.3.21': patches/@heroui__system-rsc@2.3.21.patch
+  '@heroui/table@2.2.29': patches/@heroui__table@2.2.29.patch
+  '@heroui/tabs@2.2.26': patches/@heroui__tabs@2.2.26.patch
+  '@heroui/theme@2.4.25': patches/@heroui__theme@2.4.25.patch
+  '@rsbuild/core@1.7.2': patches/@rsbuild__core@1.7.2.patch
+  '@rspack/core@1.7.2': patches/@rspack__core@1.7.2.patch
+  'electron@38.6.0': patches/electron@38.6.0.patch
+  'font-list@2.0.1': patches/font-list@2.0.1.patch
+  'framer-motion@12.23.24': patches/framer-motion@12.23.24.patch
+  'overlayscrollbars-react@0.5.6': patches/overlayscrollbars-react@0.5.6.patch
+  'vite@7.2.6': patches/vite@7.2.6.patch

@@ -8,13 +8,15 @@ import {
   RiStarOffLine,
 } from "@remixicon/react";
 
+import type { ContextMenuItem } from "@/components/context-menu";
+
 interface Props {
   /** 2:视频稿件 12:音频 21:视频合集 24:电影 */
   type: number;
   isCreatedBySelf: boolean;
 }
 
-export const getContextMenus = ({ type, isCreatedBySelf }: Props) => {
+export const getContextMenus = ({ type, isCreatedBySelf }: Props): ContextMenuItem[] => {
   const isAudio = type === 12;
   const canNotPlay = ![2, 12].includes(type);
 

@@ -1,0 +1,73 @@
+diff --git a/dist/base/table-body.d.ts b/dist/base/table-body.d.ts
+index a7c8926..e2d4a46 100644
+--- a/dist/base/table-body.d.ts
++++ b/dist/base/table-body.d.ts
+@@ -17,6 +17,6 @@ interface TableBodyProps<T> extends TableBodyProps$1<T>, Omit<HTMLHeroUIProps<"t
+      * */
+     emptyContent?: ReactNode;
+ }
+-declare const TableBody: <T>(props: TableBodyProps<T>) => JSX.Element;
++declare const TableBody: <T>(props: TableBodyProps<T>) => React.JSX.Element;
+ 
+ export { type TableBodyProps, TableBody as default };
+diff --git a/dist/base/table-cell.d.ts b/dist/base/table-cell.d.ts
+index d091975..4e39069 100644
+--- a/dist/base/table-cell.d.ts
++++ b/dist/base/table-cell.d.ts
+@@ -2,6 +2,6 @@ import { HTMLHeroUIProps } from '@heroui/system';
+ import { CellProps } from '@react-types/table';
+ 
+ type TableCellProps = CellProps & HTMLHeroUIProps<"td">;
+-declare const TableCell: (props: TableCellProps) => JSX.Element;
++declare const TableCell: (props: TableCellProps) => React.JSX.Element;
+ 
+ export { type TableCellProps, TableCell as default };
+diff --git a/dist/base/table-column.d.ts b/dist/base/table-column.d.ts
+index 8eebaa0..d2689ce 100644
+--- a/dist/base/table-column.d.ts
++++ b/dist/base/table-column.d.ts
+@@ -2,6 +2,6 @@ import { HTMLHeroUIProps } from '@heroui/system';
+ import { SpectrumColumnProps } from '@react-types/table';
+ 
+ type TableColumnProps<T> = Omit<SpectrumColumnProps<T>, "showDivider"> & Omit<HTMLHeroUIProps<"th">, keyof SpectrumColumnProps<T>>;
+-declare const TableColumn: <T>(props: TableColumnProps<T>) => JSX.Element;
++declare const TableColumn: <T>(props: TableColumnProps<T>) => React.JSX.Element;
+ 
+ export { type TableColumnProps, TableColumn as default };
+diff --git a/dist/base/table-header.d.ts b/dist/base/table-header.d.ts
+index d6403e2..33adb26 100644
+--- a/dist/base/table-header.d.ts
++++ b/dist/base/table-header.d.ts
+@@ -2,6 +2,6 @@ import { HTMLHeroUIProps } from '@heroui/system';
+ import { TableHeaderProps as TableHeaderProps$1 } from '@react-types/table';
+ 
+ type TableHeaderProps<T> = TableHeaderProps$1<T> & Omit<HTMLHeroUIProps<"thead">, keyof TableHeaderProps$1<T>>;
+-declare const TableHeader: <T>(props: TableHeaderProps<T>) => JSX.Element;
++declare const TableHeader: <T>(props: TableHeaderProps<T>) => React.JSX.Element;
+ 
+ export { type TableHeaderProps, TableHeader as default };
+diff --git a/dist/base/table-row.d.ts b/dist/base/table-row.d.ts
+index ba1aaf6..6802f61 100644
+--- a/dist/base/table-row.d.ts
++++ b/dist/base/table-row.d.ts
+@@ -2,6 +2,6 @@ import { HTMLHeroUIProps } from '@heroui/system';
+ import { RowProps } from '@react-types/table';
+ 
+ type TableRowProps<T = object> = RowProps<T> & Omit<HTMLHeroUIProps<"tr">, keyof RowProps<T>>;
+-declare const TableRow: (props: TableRowProps) => JSX.Element;
++declare const TableRow: (props: TableRowProps) => React.JSX.Element;
+ 
+ export { type TableRowProps, TableRow as default };
+diff --git a/dist/use-table.d.ts b/dist/use-table.d.ts
+index c973387..6179deb 100644
+--- a/dist/use-table.d.ts
++++ b/dist/use-table.d.ts
+@@ -129,7 +129,7 @@ type ValuesType<T = object> = {
+ declare function useTable<T extends object>(originalProps: UseTableProps<T>): {
+     BaseComponent: string | react.ComponentType<any>;
+     Component: _heroui_system.As<any>;
+-    children: ((string | number | boolean | react.ReactElement<any, string | react.JSXElementConstructor<any>> | react.ReactFragment | react.ReactPortal | null) & [react.ReactElement<_react_types_table.TableHeaderProps<T>, string | react.JSXElementConstructor<any>>, react.ReactElement<_react_types_table.TableBodyProps<T>, string | react.JSXElementConstructor<any>>]) | undefined;
++    children: ((string | number | boolean | react.ReactElement<any, string | react.JSXElementConstructor<any>> | Iterable<react.ReactNode> | react.ReactPortal | null) & [react.ReactElement<_react_types_table.TableHeaderProps<T>, string | react.JSXElementConstructor<any>>, react.ReactElement<_react_types_table.TableBodyProps<T>, string | react.JSXElementConstructor<any>>]) | undefined;
+     state: TableState<T>;
+     collection: TableCollection<T>;
+     values: ValuesType<T>;

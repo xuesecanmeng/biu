@@ -1,0 +1,47 @@
+diff --git a/dist/extend-variants.d.d.ts b/dist/extend-variants.d.d.ts
+index 327fee5..ac095c0 100644
+--- a/dist/extend-variants.d.d.ts
++++ b/dist/extend-variants.d.d.ts
+@@ -19,7 +19,7 @@ type GetSuggestedValues<S> = S extends undefined ? ClassValue : SlotsClassValue<
+ 
+ type SuggestedVariants<CP, S> = {
+   [K in keyof CP]?: ValidateSubtype<CP[K], string> extends "true"
+-    ? {[K2 in CP[K]]?: GetSuggestedValues<S>}
++    ? {[K2 in Extract<CP[K], string>]?: GetSuggestedValues<S>}
+     : ValidateSubtype<CP[K], boolean> extends "true"
+       ? {
+           true?: GetSuggestedValues<S>;
+diff --git a/dist/extend-variants.d.ts b/dist/extend-variants.d.ts
+index 327fee5..ac095c0 100644
+--- a/dist/extend-variants.d.ts
++++ b/dist/extend-variants.d.ts
+@@ -19,7 +19,7 @@ type GetSuggestedValues<S> = S extends undefined ? ClassValue : SlotsClassValue<
+ 
+ type SuggestedVariants<CP, S> = {
+   [K in keyof CP]?: ValidateSubtype<CP[K], string> extends "true"
+-    ? {[K2 in CP[K]]?: GetSuggestedValues<S>}
++    ? {[K2 in Extract<CP[K], string>]?: GetSuggestedValues<S>}
+     : ValidateSubtype<CP[K], boolean> extends "true"
+       ? {
+           true?: GetSuggestedValues<S>;
+diff --git a/dist/types.d.ts b/dist/types.d.ts
+index 7249a4c..97e5134 100644
+--- a/dist/types.d.ts
++++ b/dist/types.d.ts
+@@ -5,7 +5,7 @@ import { Selection } from '@react-types/shared';
+  */
+ 
+ type As<Props = any> = React.ElementType<Props>;
+-type DOMElements = keyof JSX.IntrinsicElements;
++type DOMElements = keyof React.JSX.IntrinsicElements;
+ type CapitalizedDOMElements = Capitalize<DOMElements>;
+ interface DOMElement extends Element, HTMLOrSVGElement {
+ }
+@@ -27,7 +27,6 @@ type InternalForwardRefRenderFunction<Component extends As, Props extends object
+     <AsComponent extends As = Component>(props: MergeWithAs<React.ComponentPropsWithoutRef<Component>, Omit<React.ComponentPropsWithoutRef<AsComponent>, OmitKeys>, Props, AsComponent>): React.ReactElement | null;
+     readonly $$typeof: symbol;
+     defaultProps?: Partial<Props> | undefined;
+-    propTypes?: React.WeakValidationMap<Props> | undefined;
+     displayName?: string | undefined;
+ };
+ /**

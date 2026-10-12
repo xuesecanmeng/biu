@@ -1,0 +1,64 @@
+diff --git a/index.d.ts b/index.d.ts
+index a79eaf3e9e300ba107b94e99ec7494ce11d89ef4..fcbbdbcde5c037836c5c2854e1e71c92b11fc27c 100644
+--- a/index.d.ts
++++ b/index.d.ts
+@@ -3,39 +3,26 @@
+  * @homepage: https://oldj.net
+  */
+ 
+-interface IOptions {
+-  disableQuoting: boolean;
++declare namespace fontList {
++  interface IOptions {
++    disableQuoting: boolean;
++  }
++
++  interface IFontInfo {
++    name: string;
++    familyName: string;
++    postScriptName: string;
++    weight: string;
++    style: string;
++    width: string;
++    monospace: boolean;
++  }
++
++  type FontList = string[];
++  type DetailedFontList = IFontInfo[];
++
++  function getFonts(options?: IOptions): Promise<FontList>;
++  function getFonts2(options?: IOptions): Promise<DetailedFontList>;
+ }
+ 
+-export interface IFontInfo {
+-  name: string;
+-  familyName: string;
+-  postScriptName: string;
+-  weight: string;
+-  style: string;
+-  width: string;
+-  monospace: boolean;
+-}
+-
+-type FontList = string[];
+-type DetailedFontList = IFontInfo[];
+-
+-// ES module exports
+-export function getFonts(options?: IOptions): Promise<FontList>;
+-export function getFonts2(options?: IOptions): Promise<DetailedFontList>;
+-
+-// Default export
+-interface FontListModule {
+-  getFonts(options?: IOptions): Promise<FontList>;
+-  getFonts2(options?: IOptions): Promise<DetailedFontList>;
+-}
+-
+-export default FontListModule;
+-
+-// CommonJS exports (backward compatibility)
+-declare const fontList: {
+-  getFonts(options?: IOptions): Promise<FontList>;
+-  getFonts2(options?: IOptions): Promise<DetailedFontList>;
+-};
+-
+ export = fontList;

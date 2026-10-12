@@ -1,0 +1,13 @@
+diff --git a/dist/use-snippet.d.ts b/dist/use-snippet.d.ts
+index e2f3c15..d3397d3 100644
+--- a/dist/use-snippet.d.ts
++++ b/dist/use-snippet.d.ts
+@@ -232,7 +232,7 @@ declare function useSnippet(originalProps: UseSnippetProps): {
+     onCopy: () => void;
+     copyIcon: ReactElement<any, string | react.JSXElementConstructor<any>> | undefined;
+     checkIcon: ReactElement<any, string | react.JSXElementConstructor<any>> | undefined;
+-    symbolBefore: string | number | boolean | ReactElement<any, string | react.JSXElementConstructor<any>> | react.ReactFragment | null;
++    symbolBefore: string | number | boolean | ReactElement<any, string | react.JSXElementConstructor<any>> | Iterable<react.ReactNode> | null;
+     isMultiLine: boolean | "" | 0 | null | undefined;
+     isFocusVisible: boolean;
+     hideCopyButton: boolean;

@@ -1,0 +1,25 @@
+diff --git a/dist/base/accordion-item-base.d.ts b/dist/base/accordion-item-base.d.ts
+index 91ee0a3..1247ec6 100644
+--- a/dist/base/accordion-item-base.d.ts
++++ b/dist/base/accordion-item-base.d.ts
+@@ -85,6 +85,6 @@ interface Props<T extends object = {}> extends Omit<ItemProps<"button", T>, "chi
+     HeadingComponent?: As;
+ }
+ type AccordionItemBaseProps<T extends object = {}> = Props<T> & AccordionItemVariantProps;
+-declare const AccordionItemBase: (props: AccordionItemBaseProps) => JSX.Element;
++declare const AccordionItemBase: (props: AccordionItemBaseProps) => React.JSX.Element;
+ 
+ export { type AccordionItemBaseProps, type AccordionItemIndicatorProps, type Props, AccordionItemBase as default };
+diff --git a/dist/use-accordion-item.d.ts b/dist/use-accordion-item.d.ts
+index 50a4f59..2071637 100644
+--- a/dist/use-accordion-item.d.ts
++++ b/dist/use-accordion-item.d.ts
+@@ -198,7 +198,7 @@ declare function useAccordionItem<T extends object = {}>(props: UseAccordionItem
+     domRef: react.RefObject<HTMLButtonElement>;
+     indicator: react.ReactNode | ((props: AccordionItemIndicatorProps) => react.ReactNode);
+     children: react.ReactNode;
+-    title: string | (string & react.ReactElement<any, string | react.JSXElementConstructor<any>>) | (string & react.ReactFragment) | (string & react.ReactPortal) | undefined;
++    title: string | (string & react.ReactElement<any, string | react.JSXElementConstructor<any>>) | (string & Iterable<react.ReactNode>) | (string & react.ReactPortal) | undefined;
+     subtitle: react.ReactNode;
+     startContent: react.ReactNode;
+     isOpen: boolean;
